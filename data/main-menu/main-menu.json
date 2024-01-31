@@ -1,0 +1,14 @@
+{
+	"song": {
+		"player1": "bf-pixel-opponent",
+		"events": [],
+		"gfVersion": "bf-pixel-opponent",
+		"notes": [],
+		"player2": "bf-pixel-opponent",
+		"song": "Main Menu",
+		"stage": "nullest",
+		"needsVoices": false,
+		"bpm": 130,
+		"speed": 1.6
+	}
+}

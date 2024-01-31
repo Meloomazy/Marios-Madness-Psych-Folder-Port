@@ -1,0 +1,22 @@
+{
+	"songs": [
+		["Golden Land", "gb", [156, 156, 156]],
+		["No Party", "hally", [31, 32, 55]],
+		["Paranoia", "v", [255, 1, 1]],
+		["Overdue", "fake-mrl", [31, 61, 12]],
+		["Powerdown", "fake", [246, 98, 23]],
+		["Demise", "2MX", [246, 98, 23]]
+	],
+
+	"weekCharacters": [
+	],
+	"weekBackground": "",
+	"difficulties": "Normal",
+	"storyName": "",
+	"weekBefore": "",
+	"weekName": "",
+	"startUnlocked": true,
+
+	"hideStoryMode": true,
+	"hideFreeplay": false
+}

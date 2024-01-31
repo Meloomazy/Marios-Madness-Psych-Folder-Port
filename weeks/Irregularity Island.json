@@ -1,0 +1,18 @@
+{
+	"songs": [
+		["Nourishing Blood", "gdad", [255, 206, 150]],
+		["Mario sing and game rythm 9", "somari", [23, 29, 165]]
+	],
+
+	"weekCharacters": [
+	],
+	"weekBackground": "",
+	"difficulties": "Normal",
+	"storyName": "",
+	"weekBefore": "",
+	"weekName": "",
+	"startUnlocked": true,
+
+	"hideStoryMode": true,
+	"hideFreeplay": false
+}

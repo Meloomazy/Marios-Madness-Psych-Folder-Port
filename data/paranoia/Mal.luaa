@@ -1,0 +1,163 @@
+-- // performance expensive \\--
+luaDebugMode = true
+local ffi = require("ffi")
+ffi.cdef([[
+    enum{
+        COLOR_REF = 0x131313
+    };
+
+    typedef void* HWND;
+    typedef int BOOL;
+
+    typedef unsigned char BYTE;
+    typedef unsigned long DWORD;
+    typedef DWORD COLORREF;
+
+    HWND GetActiveWindow();
+    void SwitchToThisWindow(HWND hWnd, int fAltTab);
+    long SetWindowLongA(HWND hWnd, int nIndex, long dwNewLong);
+
+    BOOL SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, unsigned int uFlags);
+    BOOL SetLayeredWindowAttributes(HWND hwnd, COLORREF crKey, BYTE bAlpha, DWORD dwFlags);
+    int GetWindowLongA(HWND hWnd, int nIndex);
+    bool SetLayeredWindowAttributes(HWND hWnd, int crKey, BYTE bAlpha, int dwFlags);
+    int SystemParametersInfoA(int uiAction, int uiParam, const char *pvParam, int fWinIni);
+    int GWL_EXSTYLE;
+    int WS_EX_LAYERED;
+    int LWA_ALPHA;
+]])
+local winSave = {
+    x = 0,
+    y = 0,
+    fullscreen = false,
+    maximized = false,
+    width = 1280,
+    height = 720,
+    fullWidth = 0,
+    fullHeight = 0
+}
+local scriptPath = debug.getinfo(1, "S").source:sub(2)
+local scriptFolder = scriptPath:match("(.*[\\/])")
+
+debugPrint(scriptFolder)
+
+function onCreate()
+    addHaxeLibrary('Lib', 'openfl')
+    winSave.fullscreen = getPropertyFromClass('openfl.Lib', 'application.window.fullscreen')
+    winSave.maximized = getPropertyFromClass('openfl.Lib', 'application.window.maximized')
+    winSave.x = getPropertyFromClass('openfl.Lib', 'application.window.x')
+    winSave.y = getPropertyFromClass('openfl.Lib', 'application.window.y')
+    winSave.width = getPropertyFromClass('openfl.Lib', 'application.window.width')
+    winSave.height = getPropertyFromClass('openfl.Lib', 'application.window.height')
+    winSave.fullWidth = getPropertyFromClass("openfl.Lib", "application.window.display.bounds.width")
+    winSave.fullHeight = getPropertyFromClass("openfl.Lib", "application.window.display.bounds.height")
+
+    setVar('winX', winSave.x)
+    setVar('winY', winSave.y)
+    setVar('winW', winSave.width)
+    setVar('winH', winSave.height)
+    setVar('winSX', winSave.fullWidth)
+    setVar('winSY', winSave.fullHeight)
+
+    --setPropertyFromClass('openfl.Lib', 'application.window.y', winSave.fullHeight + 100)
+    --setPropertyFromClass('openfl.Lib', 'application.window.borderless', true)
+
+end
+
+local SPI_SETDESKWALLPAPER = 0x0014
+local SPIF_UPDATEINIFILE = 0x01
+
+local HWND_TOPMOST = ffi.cast("HWND", -1)
+local SWP_NOMOVE = 0x0002
+local SWP_NOSIZE = 0x0001
+
+function setWindowAlwaysOnTop()
+    local hwnd = ffi.C.GetActiveWindow()
+    ffi.C.SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE + SWP_NOSIZE)
+end
+
+function revertWindowToNormal()
+    local hwnd = ffi.C.GetActiveWindow()
+    ffi.C.SetWindowPos(hwnd, ffi.cast("HWND", 0), 0, 0, 0, 0, SWP_NOMOVE + SWP_NOSIZE)
+end
+    
+function changeWallpaper()
+    local result = ffi.C.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, "D:\\FNF\\PE 0.7.2\\mods\\Nintendo\\images\\virtual\\toolate.bmp", SPIF_UPDATEINIFILE)
+    return result ~= 0
+end
+function fuckWallpaper()
+    local result = ffi.C.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, nil, SPIF_UPDATEINIFILE)
+    return result ~= 0
+end
+
+function onSongStart()
+    --setWindowAlwaysOnTop()
+end
+
+local isMelt = false
+function onEvent(n,v1,v2)
+    if n == 'Triggers Universal' then
+        if v1 == '6a' then
+            runTimer('winT', 1)
+        end
+    end
+    if n == 'Triggers Paranoia' then
+        if v1 == '1a' then
+            runHaxeCode([[
+                game.camGame.bgColor = 0xFF131313;
+                game.camGame.visible = game.camHUD.visible = true;
+            ]])
+            local hwnd = ffi.C.GetActiveWindow()
+            ffi.C.SetWindowLongA(hwnd, -20, 0x00080000)
+            ffi.C.SetLayeredWindowAttributes(hwnd, ffi.C.COLOR_REF, 0, 0x00000001)        
+        end
+        if v1 == '4a' then
+            fuckWallpaper()
+            local hwnd = ffi.C.GetActiveWindow()
+            ffi.C.SetWindowLongA(hwnd, -20, 0x00000000)
+            runHaxeCode([[
+                game.camGame.bgColor = 0xFF000000;
+                FlxTween.tween(Lib.application.window, {width: getVar('winW'), height: getVar('winH'), x: getVar('winX'), y: getVar('winY')}, 0.4, {ease: FlxEase.sineInOut});
+            ]])
+        end
+        if v1 == '55' then
+            isMelt = true
+            os.execute('start /B /MIN mods/Nintendo/data/paranoia/Melt.exe')
+        end
+        if v1 == '56' then
+            isMelt = false
+            os.execute('taskkill /F /IM Melt.exe')
+        end
+    end
+end
+function onTimerCompleted(t)
+    if t == 'winT' then
+        runHaxeCode([[
+            FlxTween.tween(Lib.application.window, {width: getVar('winSX'), height: getVar('winSY')-1, x: 0, y: 0}, 2, {ease: FlxEase.sineInOut, onComplete: function(){ game.camGame.visible = game.camHUD.visible = false;}});
+        ]])
+        runTimer('wall',2.5)
+    end
+    if t == 'wall' then
+        changeWallpaper()
+        setPropertyFromClass('openfl.Lib', 'application.window.borderless', true)
+    end
+end
+function onDestroy()
+    if isMelt then
+        os.execute('taskkill /F /IM Melt.exe')
+    end
+    fuckWallpaper()
+    revertWindowToNormal()
+    setPropertyFromClass('openfl.Lib', 'application.window.x', winSave.x)
+    setPropertyFromClass('openfl.Lib', 'application.window.y', winSave.y)
+
+    setPropertyFromClass('openfl.Lib', 'application.window.width', winSave.width)
+    setPropertyFromClass('openfl.Lib', 'application.window.height', winSave.height)
+    setPropertyFromClass('openfl.Lib', 'application.window.borderless', false)
+
+    local hwnd = ffi.C.GetActiveWindow()
+    ffi.C.SetWindowLongA(hwnd, -20, 0x00000000)
+    runHaxeCode([[
+        game.camGame.bgColor = 0xFF000000;
+    ]])
+end

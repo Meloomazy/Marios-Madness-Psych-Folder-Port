@@ -1,0 +1,17 @@
+{
+	"songs": [
+		["The End", "costume", [15, 15, 15]]
+	],
+
+	"weekCharacters": [
+	],
+	"weekBackground": "",
+	"difficulties": "Normal",
+	"storyName": "",
+	"weekBefore": "",
+	"weekName": "",
+	"startUnlocked": true,
+
+	"hideStoryMode": true,
+	"hideFreeplay": false
+}

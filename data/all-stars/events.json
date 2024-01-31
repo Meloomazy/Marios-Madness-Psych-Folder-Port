@@ -1,0 +1,2516 @@
+{
+    "song": {
+        "events": [
+            [
+                0,
+                [
+                    [
+                        "Triggers Universal",
+                        "1",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                3195.83333333333,
+                [
+                    [
+                        "Triggers Universal",
+                        "1",
+                        "2"
+                    ]
+                ]
+            ],
+            [
+                3200,
+                [
+                    [
+                        "Show Song",
+                        "0",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                6400,
+                [
+                    [
+                        "Show Song",
+                        "1",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                22400,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                28800,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                31200,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                35400,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        "0"
+                    ]
+                ]
+            ],
+            [
+                38400,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                41600,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                44800,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                49600,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                60800,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                67200,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                73600,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                80000,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                86400,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                92400,
+                [
+                    [
+                        "Play Animation",
+                        "singLEFT",
+                        "GF"
+                    ]
+                ]
+            ],
+            [
+                92600,
+                [
+                    [
+                        "Play Animation",
+                        "singUP",
+                        "GF"
+                    ]
+                ]
+            ],
+            [
+                92800,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                95600,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                99200,
+                [
+                    [
+                        "Triggers Universal",
+                        "6",
+                        "0"
+                    ]
+                ]
+            ],
+            [
+                105600,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "0"
+                    ]
+                ]
+            ],
+            [
+                105900,
+                [
+                    [
+                        "Triggers Universal",
+                        "0",
+                        "0"
+                    ]
+                ]
+            ],
+            [
+                106300,
+                [
+                    [
+                        "Triggers Universal",
+                        "0",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                106600,
+                [
+                    [
+                        "Triggers Universal",
+                        "0",
+                        "2"
+                    ]
+                ]
+            ],
+            [
+                107191.666666667,
+                [
+                    [
+                        "Triggers Universal",
+                        "0",
+                        "3"
+                    ]
+                ]
+            ],
+            [
+                107200,
+                [
+                    [
+                        "Ocultar HUD",
+                        "1",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                107204.166666667,
+                [
+                    [
+                        "Show Song",
+                        "0",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                110400,
+                [
+                    [
+                        "Show Song",
+                        "1",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                131800,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "5"
+                    ]
+                ]
+            ],
+            [
+                133400,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                134000,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                133200,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                133800,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                135000,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                135500,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                135300,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                134800,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                137200,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                136400,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                136600,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                137000,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                138200,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                138800,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                138000,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                138600,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                139600,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                140400,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                139800,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                140200,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                141200,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                141400,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                142000,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                141800,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                142800,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                143000,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                143600,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                143400,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                144400,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                144600,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                145200,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                145000,
+                [
+                    [
+                        "Add Camera Zoom",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                157850,
+                [
+                    [
+                        "Play Animation",
+                        "exit2",
+                        "dad"
+                    ]
+                ]
+            ],
+            [
+                157600,
+                [
+                    [
+                        "Play Animation",
+                        "exit1",
+                        "dad"
+                    ]
+                ]
+            ],
+            [
+                157612.5,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "6"
+                    ]
+                ]
+            ],
+            [
+                158395.833333333,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "8"
+                    ]
+                ]
+            ],
+            [
+                158400,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                159700,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "7"
+                    ]
+                ]
+            ],
+            [
+                160000,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "8"
+                    ]
+                ]
+            ],
+            [
+                161600,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "8"
+                    ]
+                ]
+            ],
+            [
+                162000,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "9"
+                    ]
+                ]
+            ],
+            [
+                162400,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "9"
+                    ]
+                ]
+            ],
+            [
+                162800,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "9"
+                    ]
+                ]
+            ],
+            [
+                164500,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "2"
+                    ]
+                ]
+            ],
+            [
+                163200,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "8"
+                    ]
+                ]
+            ],
+            [
+                164800,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "8"
+                    ]
+                ]
+            ],
+            [
+                166400,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "8"
+                    ]
+                ]
+            ],
+            [
+                168000,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "8"
+                    ]
+                ]
+            ],
+            [
+                169600,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "8"
+                    ]
+                ]
+            ],
+            [
+                170400,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "8"
+                    ]
+                ]
+            ],
+            [
+                170800,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "8"
+                    ]
+                ]
+            ],
+            [
+                171195.833333333,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "8"
+                    ]
+                ]
+            ],
+            [
+                171200,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "3"
+                    ]
+                ]
+            ],
+            [
+                222400,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        "4"
+                    ]
+                ]
+            ],
+            [
+                224000,
+                [
+                    [
+                        "Triggers Universal",
+                        "3",
+                        "0"
+                    ]
+                ]
+            ],
+            [
+                227187.5,
+                [
+                    [
+                        "Triggers Universal",
+                        "3",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                238400,
+                [
+                    [
+                        "Triggers Universal",
+                        "3",
+                        "5"
+                    ]
+                ]
+            ],
+            [
+                240000,
+                [
+                    [
+                        "Show Song",
+                        "0",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                241600,
+                [
+                    [
+                        "Triggers Universal",
+                        "3",
+                        "2"
+                    ]
+                ]
+            ],
+            [
+                243200,
+                [
+                    [
+                        "Show Song",
+                        "1",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                297591.666666667,
+                [
+                    [
+                        "Triggers Universal",
+                        "3",
+                        "3"
+                    ]
+                ]
+            ],
+            [
+                297400,
+                [
+                    [
+                        "Camera Zoom Chain",
+                        "0.015, 0.03",
+                        "32, 2"
+                    ]
+                ]
+            ],
+            [
+                297600,
+                [
+                    [
+                        "Add Subtitle",
+                        "COME",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                298400,
+                [
+                    [
+                        "Add Subtitle",
+                        "COME NOW",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                299200,
+                [
+                    [
+                        "Add Subtitle",
+                        "TAKE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                299500,
+                [
+                    [
+                        "Add Subtitle",
+                        "TAKE THE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                299800,
+                [
+                    [
+                        "Add Subtitle",
+                        "TAKE THE STEP",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                300800,
+                [
+                    [
+                        "Add Subtitle",
+                        "DON'T",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                301200,
+                [
+                    [
+                        "Add Subtitle",
+                        "DON'T LOOK",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                301600,
+                [
+                    [
+                        "Add Subtitle",
+                        "DON'T LOOK BACK",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                302000,
+                [
+                    [
+                        "Add Subtitle",
+                        "THERE'S",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                302400,
+                [
+                    [
+                        "Add Subtitle",
+                        "THERE'S NO-",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                302600,
+                [
+                    [
+                        "Add Subtitle",
+                        "THERE'S NOTHING",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                303800,
+                [
+                    [
+                        "Add Subtitle",
+                        "FOR",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                303000,
+                [
+                    [
+                        "Add Subtitle",
+                        "THERE'S NOTHING LEFT",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                304000,
+                [
+                    [
+                        "Add Subtitle",
+                        "FOR YOU",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                304600,
+                [
+                    [
+                        "Add Subtitle",
+                        "FOR YOU BE-",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                304800,
+                [
+                    [
+                        "Add Subtitle",
+                        "FOR YOU BEYOND",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                305200,
+                [
+                    [
+                        "Add Subtitle",
+                        "FOR YOU BEYOND THE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                305400,
+                [
+                    [
+                        "Add Subtitle",
+                        "FOR YOU BEYOND THE VEIL",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                306800,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                307200,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE TRIED",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                307800,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE TRIED AND",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                308000,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE TRIED AND YET",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                308400,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                308600,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU FAILED",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                309200,
+                [
+                    [
+                        "Add Subtitle",
+                        "TO",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                309600,
+                [
+                    [
+                        "Add Subtitle",
+                        "SAVE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                310000,
+                [
+                    [
+                        "Add Subtitle",
+                        "HER",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                310150,
+                [
+                    [
+                        "Triggers Universal",
+                        "3",
+                        "6"
+                    ]
+                ]
+            ],
+            [
+                310400,
+                [
+                    [
+                        "Add Subtitle",
+                        "CLAWS",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                311000,
+                [
+                    [
+                        "Add Subtitle",
+                        "CLAWS UP-",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                311200,
+                [
+                    [
+                        "Add Subtitle",
+                        "CLAWS UPON",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                311600,
+                [
+                    [
+                        "Add Subtitle",
+                        "CLAWS UPON YOUR",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                311800,
+                [
+                    [
+                        "Add Subtitle",
+                        "CLAWS UPON YOUR HEART",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                312800,
+                [
+                    [
+                        "Add Subtitle",
+                        "RIP",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                313200,
+                [
+                    [
+                        "Add Subtitle",
+                        "AND",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                313600,
+                [
+                    [
+                        "Add Subtitle",
+                        "TEAR",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                314000,
+                [
+                    [
+                        "Add Subtitle",
+                        "TEAR YOUR",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                314800,
+                [
+                    [
+                        "Add Subtitle",
+                        "A-",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                314400,
+                [
+                    [
+                        "Add Subtitle",
+                        "TEAR YOUR SOUL",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                315000,
+                [
+                    [
+                        "Add Subtitle",
+                        "APART",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                316400,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                316800,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE LOST",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                317200,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE LOST THE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                317400,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE LOST THE GAME",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                318300,
+                [
+                    [
+                        "Add Subtitle",
+                        "IT'S",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                318500,
+                [
+                    [
+                        "Add Subtitle",
+                        "IT'S AL-",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                318700,
+                [
+                    [
+                        "Add Subtitle",
+                        "IT'S ALWAYS",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                318900,
+                [
+                    [
+                        "Add Subtitle",
+                        "IT'S ALWAYS THE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                319100,
+                [
+                    [
+                        "Add Subtitle",
+                        "IT'S ALWAYS THE SAME",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                319600,
+                [
+                    [
+                        "Add Subtitle",
+                        "WHEN",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                319800,
+                [
+                    [
+                        "Add Subtitle",
+                        "WHEN YOU",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                320000,
+                [
+                    [
+                        "Add Subtitle",
+                        "STAND",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                320400,
+                [
+                    [
+                        "Add Subtitle",
+                        "BE-",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                320600,
+                [
+                    [
+                        "Add Subtitle",
+                        "BEFORE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                321200,
+                [
+                    [
+                        "Add Subtitle",
+                        "A",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                321400,
+                [
+                    [
+                        "Add Subtitle",
+                        "GOD",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                322800,
+                [
+                    [
+                        "Add Subtitle",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                323187.5,
+                [
+                    [
+                        "Triggers Universal",
+                        "3",
+                        "4"
+                    ]
+                ]
+            ],
+            [
+                323100,
+                [
+                    [
+                        "Camera Zoom Chain",
+                        "0.0, 0.0450, 0.002, 0.003",
+                        "32, 2"
+                    ]
+                ]
+            ],
+            [
+                323200,
+                [
+                    [
+                        "Add Subtitle",
+                        "COME",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                324000,
+                [
+                    [
+                        "Add Subtitle",
+                        "COME NOW",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                324800,
+                [
+                    [
+                        "Add Subtitle",
+                        "TAKE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                325100,
+                [
+                    [
+                        "Add Subtitle",
+                        "TAKE THE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                325400,
+                [
+                    [
+                        "Add Subtitle",
+                        "TAKE THE STEP",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                326400,
+                [
+                    [
+                        "Add Subtitle",
+                        "DON'T",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                326800,
+                [
+                    [
+                        "Add Subtitle",
+                        "DON'T LOOK",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                327200,
+                [
+                    [
+                        "Add Subtitle",
+                        "DON'T LOOK BACK",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                327600,
+                [
+                    [
+                        "Add Subtitle",
+                        "THERE'S",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                328000,
+                [
+                    [
+                        "Add Subtitle",
+                        "THERE'S NO-",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                328200,
+                [
+                    [
+                        "Add Subtitle",
+                        "THERE'S NOTHING",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                329400,
+                [
+                    [
+                        "Add Subtitle",
+                        "FOR",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                328700,
+                [
+                    [
+                        "Add Subtitle",
+                        "THERE'S NOTHING LEFT",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                329600,
+                [
+                    [
+                        "Add Subtitle",
+                        "FOR YOU",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                330200,
+                [
+                    [
+                        "Add Subtitle",
+                        "FOR YOU BE-",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                330400,
+                [
+                    [
+                        "Add Subtitle",
+                        "FOR YOU BEYOND",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                330800,
+                [
+                    [
+                        "Add Subtitle",
+                        "FOR YOU BEYOND THE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                331000,
+                [
+                    [
+                        "Add Subtitle",
+                        "FOR YOU BEYOND THE VEIL",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                332400,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                332800,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE TRIED",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                333400,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE TRIED AND",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                333600,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE TRIED AND YET",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                334000,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                334200,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE FAILED",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                334800,
+                [
+                    [
+                        "Add Subtitle",
+                        "TO",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                335200,
+                [
+                    [
+                        "Add Subtitle",
+                        "SAVE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                335600,
+                [
+                    [
+                        "Add Subtitle",
+                        "HER",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                336000,
+                [
+                    [
+                        "Add Subtitle",
+                        "CLAWS",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                336600,
+                [
+                    [
+                        "Add Subtitle",
+                        "CLAWS UP-",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                336800,
+                [
+                    [
+                        "Add Subtitle",
+                        "CLAWS UPON",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                337400,
+                [
+                    [
+                        "Add Subtitle",
+                        "CLAWS UPON YOUR HEART",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                337200,
+                [
+                    [
+                        "Add Subtitle",
+                        "CLAWS UPON YOUR",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                338400,
+                [
+                    [
+                        "Add Subtitle",
+                        "RIP",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                338800,
+                [
+                    [
+                        "Add Subtitle",
+                        "AND",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                339200,
+                [
+                    [
+                        "Add Subtitle",
+                        "TEAR",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                339600,
+                [
+                    [
+                        "Add Subtitle",
+                        "TEAR YOUR",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                340000,
+                [
+                    [
+                        "Add Subtitle",
+                        "TEAR YOUR SOUL",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                340400,
+                [
+                    [
+                        "Add Subtitle",
+                        "A-",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                340600,
+                [
+                    [
+                        "Add Subtitle",
+                        "APART",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                342000,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                342400,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE LOST",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                342800,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE LOST THE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                343000,
+                [
+                    [
+                        "Add Subtitle",
+                        "YOU'VE LOST THE GAME",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                343900,
+                [
+                    [
+                        "Add Subtitle",
+                        "IT'S",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                344100,
+                [
+                    [
+                        "Add Subtitle",
+                        "IT'S AL-",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                344300,
+                [
+                    [
+                        "Add Subtitle",
+                        "IT'S ALWAYS",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                344500,
+                [
+                    [
+                        "Add Subtitle",
+                        "IT'S ALWAYS THE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                344700,
+                [
+                    [
+                        "Add Subtitle",
+                        "IT'S ALWAYS THE SAME",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                345200,
+                [
+                    [
+                        "Add Subtitle",
+                        "WHEN",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                345400,
+                [
+                    [
+                        "Add Subtitle",
+                        "WHEN YOU",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                345600,
+                [
+                    [
+                        "Add Subtitle",
+                        "WHEN YOU STAND",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                346000,
+                [
+                    [
+                        "Add Subtitle",
+                        "BE-",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                346200,
+                [
+                    [
+                        "Add Subtitle",
+                        "BEFORE",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                346800,
+                [
+                    [
+                        "Add Subtitle",
+                        "A",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                347000,
+                [
+                    [
+                        "Add Subtitle",
+                        "GOD",
+                        "0xFF880808"
+                    ]
+                ]
+            ],
+            [
+                348400,
+                [
+                    [
+                        "Add Subtitle",
+                        "",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                348300,
+                [
+                    [
+                        "Triggers Universal",
+                        "3",
+                        "7"
+                    ]
+                ]
+            ],
+            [
+                348800,
+                [
+                    [
+                        "Screen Shake Chain",
+                        "0.003, 0.002",
+                        "2"
+                    ]
+                ]
+            ],
+            [
+                349600,
+                [
+                    [
+                        "Screen Shake Chain",
+                        "0.006, 0.004",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                350000,
+                [
+                    [
+                        "Screen Shake Chain",
+                        "0.01, 0.006",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                350400,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "0"
+                    ],
+                    [
+                        "Screen Shake Chain",
+                        "",
+                        "0"
+                    ],
+                    [
+                        "Camera Zoom Chain",
+                        "",
+                        "0"
+                    ]
+                ]
+            ],
+            [
+                351456.25,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "14"
+                    ]
+                ]
+            ],
+            [
+                361900,
+                [
+                    [
+                        "Show Song",
+                        "0",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                361895.833333333,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "15"
+                    ]
+                ]
+            ],
+            [
+                364800,
+                [
+                    [
+                        "Show Song",
+                        "1",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                375200,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "11"
+                    ]
+                ]
+            ],
+            [
+                400800,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "12"
+                    ]
+                ]
+            ],
+            [
+                401600,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "omega"
+                    ]
+                ]
+            ],
+            [
+                409000,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "luigiH2"
+                    ]
+                ]
+            ],
+            [
+                414400,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "costume"
+                    ]
+                ]
+            ],
+            [
+                420800,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "v"
+                    ]
+                ]
+            ],
+            [
+                426400,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "11"
+                    ]
+                ]
+            ],
+            [
+                433600,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "cdpeach"
+                    ]
+                ]
+            ],
+            [
+                436800,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "wdwluigi"
+                    ]
+                ]
+            ],
+            [
+                440000,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "gb"
+                    ]
+                ]
+            ],
+            [
+                446400,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "2MX"
+                    ]
+                ]
+            ],
+            [
+                449600,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "12"
+                    ]
+                ]
+            ],
+            [
+                452800,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "1"
+                    ]
+                ]
+            ],
+            [
+                454400,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "2"
+                    ]
+                ]
+            ],
+            [
+                467200,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "3"
+                    ]
+                ]
+            ],
+            [
+                473600,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "4"
+                    ]
+                ]
+            ],
+            [
+                478400,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "5"
+                    ]
+                ]
+            ],
+            [
+                479950,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "6"
+                    ]
+                ]
+            ],
+            [
+                480000,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "peachex"
+                    ]
+                ]
+            ],
+            [
+                481600,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "mrl"
+                    ]
+                ]
+            ],
+            [
+                483200,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "hally"
+                    ]
+                ]
+            ],
+            [
+                485000,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "secret"
+                    ]
+                ]
+            ],
+            [
+                486400,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "devil"
+                    ]
+                ]
+            ],
+            [
+                489600,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "beta2"
+                    ]
+                ]
+            ],
+            [
+                492800,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "sys"
+                    ]
+                ]
+            ],
+            [
+                496000,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "stanley"
+                    ]
+                ]
+            ],
+            [
+                499200,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "wario"
+                    ]
+                ]
+            ],
+            [
+                502400,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        "turmoil"
+                    ]
+                ]
+            ],
+            [
+                504800,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "13"
+                    ]
+                ]
+            ],
+            [
+                505600,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "7"
+                    ]
+                ]
+            ],
+            [
+                509000,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "8"
+                    ]
+                ]
+            ],
+            [
+                512000,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "9"
+                    ]
+                ]
+            ],
+            [
+                514300,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        "10"
+                    ]
+                ]
+            ]
+        ]
+    }
+}

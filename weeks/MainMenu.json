@@ -1,0 +1,17 @@
+{
+	"songs": [
+		["Main Menu", "face", [155, 1, 1]]
+	],
+
+	"weekCharacters": [
+	],
+	"weekBackground": "",
+	"difficulties": "Normal",
+	"storyName": "",
+	"weekBefore": "",
+	"weekName": "",
+	"startUnlocked": true,
+
+	"hideStoryMode": true,
+	"hideFreeplay": false
+}

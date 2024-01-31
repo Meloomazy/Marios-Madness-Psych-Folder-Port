@@ -1,0 +1,126 @@
+{
+    "song": {
+        "events": [
+            [
+                5760,
+                [
+                    [
+                        "Write DS",
+                        "22",
+                        "pirate"
+                    ]
+                ]
+            ],
+            [
+                21120,
+                [
+                    [
+                        "Write DS",
+                        "20",
+                        "thief"
+                    ]
+                ]
+            ],
+            [
+                36480,
+                [
+                    [
+                        "Write DS",
+                        "20",
+                        "sinner"
+                    ]
+                ]
+            ],
+            [
+                59520,
+                [
+                    [
+                        "Write DS",
+                        "20",
+                        "im sorry"
+                    ]
+                ]
+            ],
+            [
+                74880,
+                [
+                    [
+                        "Write DS",
+                        "36",
+                        "stop"
+                    ]
+                ]
+            ],
+            [
+                92160,
+                [
+                    [
+                        "Triggers Universal",
+                        "0",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                107520,
+                [
+                    [
+                        "Triggers Universal",
+                        "1",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                109440,
+                [
+                    [
+                        "Triggers Universal",
+                        "2",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                115200,
+                [
+                    [
+                        "Write DS",
+                        "50",
+                        "criminal"
+                    ]
+                ]
+            ],
+            [
+                117120,
+                [
+                    [
+                        "Triggers Universal",
+                        "3",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                132000,
+                [
+                    [
+                        "Triggers Universal",
+                        "4",
+                        ""
+                    ]
+                ]
+            ],
+            [
+                149760,
+                [
+                    [
+                        "Triggers Universal",
+                        "5",
+                        ""
+                    ]
+                ]
+            ]
+        ]
+    }
+}

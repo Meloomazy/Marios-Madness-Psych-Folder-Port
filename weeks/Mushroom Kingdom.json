@@ -1,0 +1,18 @@
+{
+	"songs": [
+		["Starman Slaughter", "marioex2", [155, 1, 1]],
+		["All Stars", "ultram", [255, 7, 66]]
+	],
+
+	"weekCharacters": [
+	],
+	"weekBackground": "",
+	"difficulties": "Normal",
+	"storyName": "",
+	"weekBefore": "",
+	"weekName": "",
+	"startUnlocked": true,
+
+	"hideStoryMode": true,
+	"hideFreeplay": false
+}

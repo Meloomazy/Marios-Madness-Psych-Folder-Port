@@ -1,0 +1,90 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				450
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "VIdle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				200,
+				410
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "VRight",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				347,
+				524
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "VLeft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				400,
+				110
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "VDown",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				90,
+				1190
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "VUp",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-5,
+				450
+			],
+			"anim": "transform",
+			"fps": 24,
+			"name": "VTransformation",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Mr_Virtual_V2_Assets",
+	"position": [
+		-160,
+		90
+	],
+	"healthicon": "v",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		0,
+		0
+	],
+	"camera_position": [
+		-60,
+		-320
+	],
+	"sing_duration": 6.1,
+	"scale": 1,
+	"_editor_isPlayer": false
+}
