@@ -43,7 +43,6 @@ function onCreate()
     addLuaSprite('sky_ithink')
     setProperty('sky_ithink.color', getColorFromHex('73aafd'))
 
-
     makeLuaSprite('dhTree','stages/beatus/tree')
     scaleObject('dhTree', 6, 6)
     screenCenter('dhTree')
@@ -73,13 +72,6 @@ function onCreate()
     scaleObject('bgBar', 3, 3)
     screenCenter('bgBar')
     addLuaSprite('bgBar')
-
-    -- random bullshit here we go
-    setProperty('bgBar.angle', 35)
-    startTween('bgBarSTupidTweenX', 'bgBar', {x = -800}, 7, {type = "PINGPONG"})
-    startTween('bgBarSTupidTweenY', 'bgBar', {y = -800}, 8, {type = "PINGPONG"})
-    startTween('bgBarSTupidTweenAngle', 'bgBar', {angle = -35}, 9, {type = "PINGPONG"})
-    --
 
     makeAnimatedLuaSprite('clownCar','stages/beatus/Clown_Car')
     addAnimationByPrefix('clownCar', 'idle', 'clown car anim', 12, true)
@@ -167,6 +159,8 @@ function onCreate()
     screenCenter('nintIntro')
     addLuaSprite('nintIntro')
 
+    lofiTweensToBeCreepyTo()
+    runTimer('barsMovement', 21.5)
 end
 local fireBarY
 function onCreatePost()
@@ -195,7 +189,7 @@ function onCreatePost()
         end
     end
 end
-intro = false
+intro = true
 function onStartCountdown(t)
     if intro then
         setProperty('dadGroup.visible', false)
@@ -511,6 +505,9 @@ function onEvent(n,v1,v2)
     end
 end
 function onTimerCompleted(t)
+    if t == 'barsMovement' then
+        lofiTweensToBeCreepyTo()
+    end
     if t == 'thefogiscoming' then
         setProperty('sky_ithink.color', getColorFromHex('73aafd'))
     end
@@ -592,7 +589,7 @@ function onUpdate()
 
     if bowserMech then
         runHaxeCode([[
-            if (FlxG.pixelPerfectOverlap(game.modchartSprites.get('fireBar1'), game.iconP1)){
+            if (FlxG.pixelPerfectOverlap(game.modchartSprites.get('fireBar1'), game.iconP1) && !getModSetting('noMechs')){
                 setVar('icAng', getVar('icAng') - 0.4);
                 if (getVar('icAng') < 4) setVar('icAng', 4);
                 game.iconP1.angle = 8 * Math.sin(Conductor.songPosition/getVar('icAng'));
@@ -605,4 +602,51 @@ function onUpdate()
             }
         ]])
     end
+end
+
+-- tween abomination -Tatoraa
+function lofiTweensToBeCreepyTo()
+    runHaxeCode([[
+        var nesTweens = [];
+        var sprite = game.getLuaObject('bgBar');
+
+        var tempx = sprite.x;
+		// this tween chain is an abomination
+		nesTweens.push(FlxTween.tween(sprite, {x: tempx + 420, angle: -35}, 4.0, {
+			onComplete: function(tween:FlxTween)
+			{
+				nesTweens.push(FlxTween.tween(sprite, {angle: 20}, 2.0, {
+					onComplete: function(tween:FlxTween)
+					{
+						nesTweens.push(FlxTween.tween(sprite, {x: tempx + 400, angle: 30}, 2.0, {
+							onComplete: function(tween:FlxTween)
+							{
+								nesTweens.push(FlxTween.tween(sprite, {x: tempx + 420, angle: 0}, 2.0, {
+									onComplete: function(tween:FlxTween)
+									{
+										nesTweens.push(FlxTween.tween(sprite, {x: tempx + 520, angle: -15}, 3.0, {
+											onComplete: function(tween:FlxTween)
+											{
+												nesTweens.push(FlxTween.tween(sprite, {angle: 10}, 1.5, {
+													onComplete: function(tween:FlxTween)
+													{
+														nesTweens.push(FlxTween.tween(sprite, {x: tempx - 50, angle: -40}, 5.5, {
+															onComplete: function(tween:FlxTween)
+															{
+																nesTweens.push(FlxTween.tween(sprite, {x: tempx, angle: 0}, 1.5));
+															}
+														}));
+													}
+												}));
+											}
+										}));
+									}
+								}));
+							}
+						}));
+					}
+				}));
+			}
+		}));
+    ]])
 end

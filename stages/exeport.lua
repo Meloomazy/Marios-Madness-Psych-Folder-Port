@@ -1,6 +1,7 @@
 addCharacterToList('mxV2', 'dad')
 
 function onCreate()
+    addHaxeLibrary('FlxText', 'flixel.text')
     setProperty('camZooming', true)
     local x, y = -1940, -1670
     if not lowQuality then
@@ -81,7 +82,7 @@ function onCreatePost()
     addAnimationByPrefix('static', 't', 'static play', 24, true)
     addLuaSprite('static')
     setProperty('static.alpha', 0.001)
-    objCutsceneCam('static')
+    setObjCamEst('static')
 
     if not lowQuality then
         makeAnimatedLuaSprite('MXTransformation', 'stages/MX/MX_Transformation_Assets', -1200, -970)
@@ -98,21 +99,20 @@ function onCreatePost()
         game.dadGroup.x -= 400;
         game.dad.x += 230;
     ]])
-    objCutsceneCam('MXDialogue')
+    setObjCamEst('MXDialogue')
 end
 
 
-function HA()
-    makeLuaSprite('mxHA', 'mx/ha', getProperty('iconP2.x')- 50, getProperty('iconP2.y'))
-    setProperty('mxHA.antialiasing', false)
-    scaleObject('mxHA', 0.5, 0.5)
-    setObjectCamera('mxHA', 'camHUD')
-    addLuaSprite('mxHA')
-    setProperty('mxHA.angle', -35)
-    setProperty('mxHA.velocity.x', -105)
-    setProperty('mxHA.velocity.y', -180)
-    setProperty('mxHA.acceleration.y', 350)
-    setProperty('mxHA.angularVelocity', -25)
+function HA() -- i love this silly thing -meloom
+    -- changed to a better one even though use haxe :troll: -tatoraa
+    runHaxeCode([[
+        var h:FlxText = new FlxText(iconP2.x - 50, iconP2.y, 600, 'HA!', 20);
+        h.setFormat(Paths.font("mariones.ttf"), 25, FlxColor.WHITE, 'left');
+        h.camera = camHUD;
+        h.angle = FlxG.random.float(-20, 20);
+        add(h);
+        FlxTween.tween(h, {x: h.x - 50, y: h.y + (FlxG.random.bool(50) ? 25 : -25), alpha: 0}, 1, {ease: FlxEase.cubeOut, onComplete: (_) -> remove(h)});
+    ]])
 end
 
 local mxlaugh = false
@@ -152,7 +152,7 @@ function onTimerCompleted(t)
 end
 function onTweenCompleted(t)
     if t == 'MXDialogueAlphaV' then
-        startVideoSprite('mxcutscene', 'Powerdownscene')
+        if not getModSetting('noVideoSprite') then startVideoSprite('mxcutscene', 'Powerdownscene') end
     end
 end
 function onVideoFinished(t)
@@ -171,7 +171,11 @@ function onEvent(n,v1,v2)
         end
         if v1 == '2' then
         end
-        if v1 == '7' then
+        if v1 == '7' and getModSetting('noVideoSprite') then
+            setProperty('uiGroup.alpha', 1)
+            setProperty('gfBody.alpha', 1)
+            setProperty('fiStage.visible', false)
+            cameraFlash('camGame', 'ff0000', 1)
         end
     end
     if n == 'Triggers Powerdown' then

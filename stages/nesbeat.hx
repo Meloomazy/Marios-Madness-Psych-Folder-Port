@@ -1,10 +1,7 @@
 import flixel.addons.display.FlxBackdrop;
 
 // shader stuff lmao
-game.initLuaShader('angel');
-game.initLuaShader('test3');
-game.initLuaShader('test5');
-game.initLuaShader('test9');
+var useShader = !getModSetting('noShaders');
 var test3;
 var test5;
 var test9;
@@ -90,33 +87,41 @@ function onCreatePost(){
 
     lightningL.visible = false;
 
-    test9 = game.createRuntimeShader('test9');
-    test9.setFloat('amount', 0.5);
-    test3 = game.createRuntimeShader('test3');
-    test5 = game.createRuntimeShader('test5');
-    angel = game.createRuntimeShader('angel');
+    if (useShader){
+        game.initLuaShader('angel');
+        game.initLuaShader('test3');
+        game.initLuaShader('test5');
+        game.initLuaShader('test9');
+        test9 = game.createRuntimeShader('test9');
+        test9.setFloat('amount', 0.5);
+        test3 = game.createRuntimeShader('test3');
+        test5 = game.createRuntimeShader('test5');
+        angel = game.createRuntimeShader('angel');
 
-    game.camGame.filters = [new ShaderFilter(angel), new ShaderFilter(test3), new ShaderFilter(test5)];
-    game.camHUD.filters = [new ShaderFilter(test3), new ShaderFilter(test5)];
-    fellasCam.filters = [new ShaderFilter(angel),new ShaderFilter(test3), new ShaderFilter(test5)];
-    //game.camOther.filters = [new ShaderFilter(test3), new ShaderFilter(test5)];
+        game.camGame.filters = [new ShaderFilter(angel), new ShaderFilter(test3), new ShaderFilter(test5)];
+        game.camHUD.filters = [new ShaderFilter(test3), new ShaderFilter(test5)];
+        fellasCam.filters = [new ShaderFilter(angel),new ShaderFilter(test3), new ShaderFilter(test5)];
+        //game.camOther.filters = [new ShaderFilter(test3), new ShaderFilter(test5)];
+    }
     return;
 }
 var offsetL = [0,0];
-var lol:Float = 0;
-var ps:Float = 0;
-var st:Float = 0;
+var lol = 0;
+var ps = 0;
+var st = 0;
 var endBeat = false;
+var dontMiss = false;
+var step = 0;
 function onUpdate(el){
-    if (FlxG.keys.justPressed.H) game.health = 2; // tehee
-
     lol += el;
-    test3.setFloat('time', lol);
-    ps = FlxMath.lerp(1, ps, Math.exp(-el * 6));
-    st = FlxMath.lerp(0, st, Math.exp(-el * 6));
-    angel.setFloat('stronk', st);
-    angel.setFloatArray('pixel', [ps, ps]);
-    angel.setFloat('iTime', (Conductor.songPosition / 1000));
+    if (useShader){
+        test3.setFloat('time', lol);
+        ps = FlxMath.lerp(1, ps, Math.exp(-el * 6));
+        st = FlxMath.lerp(0, st, Math.exp(-el * 6));
+        angel.setFloat('stronk', st);
+        angel.setFloatArray('pixel', [ps, ps]);
+        angel.setFloat('iTime', (Conductor.songPosition / 1000));
+    }
 
     hitboxIcon.x = game.iconP1.x + 40;
     hitboxIcon.y = game.iconP1.y + 25;
@@ -237,7 +242,7 @@ function onEvent(n, v1, v2) {
     }
     if (n == 'Triggers Unbeatable'){
         if (v1 == '3'){
-            if (game.health > 0.2) //game.health -= 0.1; // its fair?
+            if (game.health > 0.2 && !getModSetting('noMechs')) game.health -= 0.1; // its fair?
             hitboxIcon.alpha = 1;
             new FlxTimer().start(0.05, function(tmr:FlxTimer) {
                 hitboxIcon.alpha = 0;
@@ -298,6 +303,7 @@ function onEvent(n, v1, v2) {
     }
     if (n == 'fellas thing') {
         if (v1 == 'visible') {
+            if (curStep < 1714) dontMiss = !dontMiss;
             game.triggerEvent('ycbu text', '', '');
             lightningL.visible = !lightningL.visible;
             st = 0.325;
@@ -367,6 +373,11 @@ function onEvent(n, v1, v2) {
         }
     }
 
+    return;
+}
+
+function noteMiss(note){
+    if (dontMiss && !getModSetting('noMechs')) game.health = 0;
     return;
 }
 

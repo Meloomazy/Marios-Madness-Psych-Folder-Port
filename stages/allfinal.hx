@@ -81,7 +81,6 @@ var act4GameOver:BGSprite;
 
 var act4Intro:BGSprite;
 var blackBarThingie:FlxSprite;
-var camEst:FlxCamera;
 
 var LG;
 var w4r;
@@ -89,24 +88,16 @@ var y0sh;
 function onCreate(){
 
 // uh camera i think - meloom
-    FlxG.cameras.remove(game.camHUD,false);
-    FlxG.cameras.remove(game.camOther,false);
-    camEst = new FlxCamera();
-    camEst.bgColor = 0x00;
-    FlxG.cameras.add(camEst,false);
-    FlxG.cameras.add(game.camHUD,false);
-    FlxG.cameras.add(game.camOther,false);
-
     blackBarThingie = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
     blackBarThingie.setGraphicSize(Std.int(blackBarThingie.width * 10));
     blackBarThingie.scrollFactor.set(0, 0);
     blackBarThingie.alpha = 1;
-    blackBarThingie.cameras = [camEst];
+    blackBarThingie.cameras = [getVar('camEst')];
     add(blackBarThingie);
 
     act1Intro = new BGSprite('stages/allfinal/act1/All_Stars_Intro', 0, 0, 0, 0, ['intro anim']);
     act1Intro.animation.addByPrefix('idle', 'intro anim', 24, false);
-    act1Intro.cameras = [camEst];
+    act1Intro.cameras = [getVar('camEst')];
     act1Intro.alpha = 0;
     act1Intro.screenCenter(0x01);
     add(act1Intro);
@@ -231,7 +222,7 @@ function onCreate(){
 
     act2IntroGF = new BGSprite('stages/allfinal/act1/Act_2_Intro', 0, 330, 0.2, 0.2, ['act2Stat']);
     act2IntroGF.animation.addByPrefix('idle', 'Anim1', 24, true);
-    act2IntroGF.cameras = [camEst];
+    act2IntroGF.cameras = [getVar('camEst')];
     act2IntroGF.scale.set(2, 2);
     act2IntroGF.screenCenter(0x01);
     act2IntroGF.x -= 40;
@@ -241,7 +232,7 @@ function onCreate(){
 
     act2IntroEyes = new BGSprite('stages/allfinal/act1/Act_2_Intro', 0, 320, 0.2, 0.2, ['act2Stat']);
     act2IntroEyes.animation.addByPrefix('idle', 'EyesBG', 24, false);
-    act2IntroEyes.cameras = [camEst];
+    act2IntroEyes.cameras = [getVar('camEst')];
     act2IntroEyes.scale.set(0.8, 0.8);
     act2IntroEyes.screenCenter(0x01);
     act2IntroEyes.x -= 270;
@@ -358,7 +349,7 @@ function onCreate(){
     act4DeadBF.alpha = 0.001;
 
     act4GameOver = new BGSprite('stages/allfinal/act4/Act_4_FINALE_Gameover', 0, 0, 1, 1);
-    act4GameOver.cameras = [camEst];
+    act4GameOver.cameras = [getVar('camEst')];
     act4GameOver.screenCenter();
     act4GameOver.alpha = 0.001;
 
@@ -369,7 +360,7 @@ function onCreate(){
 
     act4Intro = new BGSprite('stages/allfinal/act4/Act_4_Voiceline', 0, 0, 1, 1, ['thingy']);
     act4Intro.animation.addByPrefix('anim', 'thingy', 24, false);
-    act4Intro.cameras = [camEst];
+    act4Intro.cameras = [getVar('camEst')];
     act4Intro.alpha = 0.001;
 
     add(act4DeadBF);

@@ -7552,6 +7552,7 @@
         "stage": "somari",
         "validScore": true,
         "sections": 0,
+        "arrowSkin": "NES_NOTE_assets",
         "needsVoices": true,
         "bpm": 117,
         "speed": 2.5

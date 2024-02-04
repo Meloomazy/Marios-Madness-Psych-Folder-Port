@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="cavepixelgranddad.png">
+<SubTexture name="cavepixelgranddad idle0000" x="0" y="116" width="84" height="55" frameX="0" frameY="-4" frameWidth="76" frameHeight="51" />
+<SubTexture name="cavepixelgranddad idle0001" x="84" y="116" width="84" height="55" frameX="0" frameY="-4" frameWidth="76" frameHeight="51" />
+<SubTexture name="cavepixelgranddad idle0002" x="152" y="0" width="79" height="56" frameX="-1" frameY="-3" frameWidth="76" frameHeight="51" />
+<SubTexture name="cavepixelgranddad idle0003" x="0" y="0" width="76" height="59" frameX="0" frameY="0" frameWidth="76" frameHeight="51" />
+<SubTexture name="cavepixelgranddad idle0004" x="76" y="0" width="76" height="57" frameX="-1" frameY="-2" frameWidth="76" frameHeight="51" />
+<SubTexture name="cavepixelgranddad idle0005" x="0" y="59" width="76" height="57" frameX="-1" frameY="-2" frameWidth="76" frameHeight="51" />
+</TextureAtlas>

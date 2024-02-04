@@ -1,8 +1,8 @@
 --Script by Teniente Mantequilla#0139--
 
 --change this ones--
-local camMovement = 15
-local velocity = 1.5
+local camMovement = 30
+local velocity = 1
 
 --leave this ones alone--
 local campointx = 670

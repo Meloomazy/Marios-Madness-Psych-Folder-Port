@@ -7682,7 +7682,7 @@
                 "mustHitSection": true
             }
         ],
-        "gfVersion": "gf",
+        "gfVersion": "blank",
         "player3": "gf",
         "splashSkin": "noteSplashes",
         "song": "Last Course",

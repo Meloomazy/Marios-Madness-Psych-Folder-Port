@@ -1,0 +1,24 @@
+{
+	"animations": [
+		
+	],
+	"no_antialiasing": false,
+	"image": "beep",
+	"position": [
+		26,
+		167
+	],
+	"healthicon": "",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		0,
+		0
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 0,
+	"scale": 0.1
+}

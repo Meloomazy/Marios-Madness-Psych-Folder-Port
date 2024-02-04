@@ -1,125 +1,144 @@
---Script by Teniente Mantequilla#0139--
+--[[
+	Base Script by Teniente Mantequilla#0139
+	Modified by Meloomazy for MMv2 Port :scream:
+]]--
 
---change this ones--
-local camMovement = 20
-local velocity = 1
+setProperty('isCameraOnForcedPos', true)
 
---leave this ones alone--
-local campointx = getProperty('gf.x')
-local campointy = getProperty('gf.y')
+local posValDad = {-80, 450}
+local posValBF = {900, 550}
+local posValGF = {550, 250}
+local dadMove = 30
+local bfMove = 30
+local dadZoom = 0.5
+local bfZoom = 0.6
+
+local campointx = posValDad[1]
+local campointy = posValDad[2]
 local camlockx = campointx
 local camlocky = campointy
 local camlock = true
 local bfturn = false
 local camon = true
 
-local posValDad = {getMidpointX('dad') + 150 + getProperty('dad.cameraPosition[0]'), getMidpointY('dad') - 100 + getProperty('dad.cameraPosition[1]')}
-local posValBF = {getMidpointX('boyfriend') - 100 - getProperty('boyfriend.cameraPosition[0]'), getMidpointY('boyfriend') - 100 + getProperty('boyfriend.cameraPosition[1]')}
+setVar('posValDad', posValDad)
+setVar('posValBF', posValBF)
+setVar('posValGF', posValGF)
 
-local dadZoom = getProperty('defaultCamZoom')
-local bfZoom = getProperty('defaultCamZoom')
+setVar('dadMove', dadMove)
+setVar('bfMove', bfMove)
+setVar('dadZoom', dadZoom)
+setVar('bfZoom', bfZoom)
 
-function onSectionHit(focus)
-	if not mustHitSection then
-		campointx = posValDad[1]
-		campointy = posValDad[2]
-		bfturn = false
-		camlock = false
-		setProperty('cameraSpeed', 1)
-		setProperty('defaultCamZoom', dadZoom)	
-	else
-		campointx = posValBF[1]
-		campointy = posValBF[2]
-		bfturn = true
-		camlock = false
-		setProperty('cameraSpeed', 1)
-		setProperty('defaultCamZoom', bfZoom)
+setVar('camMove', true)
+setVar('camMoveZoom', true)
+
+local isGF = false
+function onSectionHit()
+	if getVar('camMove') then
+		if not mustHitSection then
+			bfturn = false
+			if isGF then 
+				campointx = getVar('posValGF')[1]
+				campointy = getVar('posValGF')[2]    
+			else
+				campointx = getVar('posValDad')[1]
+				campointy = getVar('posValDad')[2]
+			end	
+            if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('dadZoom')) end
+		else
+			if isGF then 
+				campointx = getVar('posValGF')[1]
+				campointy = getVar('posValGF')[2]    
+			else
+				campointx = getVar('posValBF')[1]
+				campointy = getVar('posValBF')[2]
+			end	
+			bfturn = true
+			if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('bfZoom')) end
+		end
+		camlockx = campointx
+		camlocky = campointy
 	end
-	camlockx = campointx
-	camlocky = campointy
 end
 
 function goodNoteHit(id, direction, noteType, isSustainNote)
-	if camon == true then
-	if bfturn then
+    if bfturn then
+		isGF = (noteType == 'GF Sing')
 		if direction == 0 then
-			camlockx = campointx - camMovement
+			camlockx = campointx - getVar('bfMove')
 			camlocky = campointy
 		elseif direction == 1 then
-			camlocky = campointy + camMovement
+			camlocky = campointy + getVar('bfMove')
 			camlockx = campointx
 		elseif direction == 2 then
-			camlocky = campointy - camMovement
+			camlocky = campointy - getVar('bfMove')
 			camlockx = campointx
 		elseif direction == 3 then
-			camlockx = campointx + camMovement
+			camlockx = campointx + getVar('bfMove')
 			camlocky = campointy
 		end
-	runTimer('camreset', 1)
-	setProperty('cameraSpeed', velocity)
-	camlock = true
-	end	
-end
+        runTimer('camreset', 1)
+    end
 end
 
 function opponentNoteHit(id, direction, noteType, isSustainNote)
-	if not bfturn then
+    if not bfturn then
+		isGF = (noteType == 'GF Sing')
 		if direction == 0 then
-			camlockx = campointx - camMovement
+			camlockx = campointx - getVar('dadMove')
 			camlocky = campointy
 		elseif direction == 1 then
-			camlocky = campointy + camMovement
+			camlocky = campointy + getVar('dadMove')
 			camlockx = campointx
 		elseif direction == 2 then
-			camlocky = campointy - camMovement
+			camlocky = campointy - getVar('dadMove')
 			camlockx = campointx
 		elseif direction == 3 then
-			camlockx = campointx + camMovement
+			camlockx = campointx + getVar('dadMove')
 			camlocky = campointy
 		end
-		runTimer('camreset', 1)
-		setProperty('cameraSpeed', velocity)
-		camlock = true
-	end	
+        runTimer('camreset', 1)
+    end
 end
 
 function onTimerCompleted(tag, loops, loopsLeft)
-	if camon == true then
-	if tag == 'camreset' then
-	camlock = false
-	setProperty('cameraSpeed', 1)
-	setProperty('camFollow.x', campointx)
-	setProperty('camFollow.y', campointy)
+	if getVar('camMove') then
+		if tag == 'camreset' then
+		setProperty('camFollow.x', campointx)
+		setProperty('camFollow.y', campointy)
+		end
 	end
-end
 end
 
 function onUpdate()
-	setProperty('camFollow.x', camlockx)
-	setProperty('camFollow.y', camlocky)
+	if getVar('camMove') then
+		setProperty('camFollow.x', camlockx)
+		setProperty('camFollow.y', camlocky)
+	end
 end
 
 function onEvent(n,v1,v2)
 	if n == 'Set Cam Pos' then
 		if v2 == 'bf' then
 			local pos = stringSplit(v1, ", ")
-			posValBF = {pos[1], pos[2]}
+            setVar('posValBF', {pos[1], pos[2]})
 		end
 		if v2 == 'dad' then
 			local pos = stringSplit(v1, ", ")
-			posValDad = {pos[1], pos[2]}
+			setVar('posValDad', {pos[1], pos[2]})
 		end
 	end
 	if n == 'Set Cam Zoom' then
-		if v2 == '' then
-			dadZoom = tonumber(v1)
-			bfZoom = tonumber(v1)
-		end
+        if v2 == '' then
+            setVar('dadZoom', tonumber(v1))
+            setVar('bfZoom', tonumber(v1))
+        end
 		if v2 == 'dad' then
-			dadZoom = tonumber(v1)
+            setVar('dadZoom', tonumber(v1))
 		end
 		if v2 == 'bf' then
-			bfZoom = tonumber(v1)
+            setVar('bfZoom', tonumber(v1))
 		end
 	end
 end

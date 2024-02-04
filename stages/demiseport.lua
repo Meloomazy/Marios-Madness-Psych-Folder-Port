@@ -1,23 +1,26 @@
 local ls
 local cs
 setProperty('introSoundsSuffix', '-null')
-
+local useIntro = false
 function onCreatePost()
-    
     startFore(1)
-    setProperty('camGame.alpha',0.001)
-    setProperty('camHUD.alpha',0.001)
     for i = 0, getProperty('playerStrums.length')-1 do
         setPropertyFromGroup('playerStrums', i, 'x', _G['defaultOpponentStrumX'..i])
     end
     for i = 0, getProperty('opponentStrums.length')-1 do
         setPropertyFromGroup('opponentStrums', i, 'x', _G['defaultPlayerStrumX'..i])
     end
+
+    if not getModSetting('noVideoSprite') then
+        useIntro = true
+        setProperty('camGame.alpha',0.001)
+        setProperty('camHUD.alpha',0.001)
+    end
 end
 
 function onCountdownTick(t)
-    if t == 0 then 
-    startVideoSprite('introVideoLmao', 'demise_cutscene')
+    if t == 0 and useIntro then 
+        startVideoSprite('introVideoLmao', 'demise_cutscene')
     end
 end
 function onVideoFinished(t)

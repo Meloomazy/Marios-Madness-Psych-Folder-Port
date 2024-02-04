@@ -7417,9 +7417,9 @@
                 "mustHitSection": true
             }
         ],
-        "gfVersion": "gf",
+        "gfVersion": "blank",
         "events": [],
-        "player3": "gfcave",
+        "player3": "",
         "song": "The End",
         "validScore": true,
         "needsVoices": true,

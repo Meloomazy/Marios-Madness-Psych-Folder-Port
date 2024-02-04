@@ -36,8 +36,8 @@ var fogred:FlxSprite;
 var extraTween = [];
 var eventTweens = []; // i forgot why this exist
 
-game.initLuaShader('test3');
-game.initLuaShader('test5');
+var useShader = !getModSetting('noShaders');
+
 var test3;
 var test5;
 
@@ -189,12 +189,16 @@ function onCreate(){
 }
 
 function onCreatePost(){
-    test3 = game.createRuntimeShader('test3');
-    test5 = game.createRuntimeShader('test5');
+    if (useShader){
+        game.initLuaShader('test3');
+        game.initLuaShader('test5');
+        test3 = game.createRuntimeShader('test3');
+        test5 = game.createRuntimeShader('test5');
 
-    game.camGame.filters = [new ShaderFilter(test3), new ShaderFilter(test5)];
-    game.camHUD.filters = [new ShaderFilter(test3), new ShaderFilter(test5)];
-    
+        game.camGame.filters = [new ShaderFilter(test3), new ShaderFilter(test5)];
+        game.camHUD.filters = [new ShaderFilter(test3), new ShaderFilter(test5)];
+    }
+
     iconP1.flipX = true;
     iconP2.flipX = true;
     healthBar.leftToRight = false;
@@ -390,7 +394,7 @@ function onSongStart(){
 var lol;
 function onUpdate(el){
     lol += el;
-    test3.setFloat('time', lol);
+    if (useShader) test3.setFloat('time', lol);
 
     demcut2.x = demcut1.x + 650;
     demcut3.x = demcut1.x + 1100;

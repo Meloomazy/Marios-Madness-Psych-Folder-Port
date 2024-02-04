@@ -107,7 +107,6 @@ function onEvent(n,v1,v2)
             setProperty('bfCape.visible', false)
             triggerEvent('Play Animation', 'prejump', 'boyfriend')
         end
-      
         if v1 == '9' then
             setVar('camMove', false)
             startTween('camMovingWee', 'camFollow', {x = getVar('posValDad')[1], y = getVar('posValDad')[2]}, 2.5, {ease = 'cubeInOut'})

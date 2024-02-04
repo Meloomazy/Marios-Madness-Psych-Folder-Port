@@ -7,12 +7,21 @@ local gameShake = 0.003
 local hudShake = 0.003
 local shakeTime = false
 
+setVar('curBuild', buildTarget)
+
+local months = {
+    "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"
+}
+local now = os.date("*t")
+local date = string.format("%s %02d %d", months[now.month], now.day, now.year)
+
 function onCreatePost()
-    makeLuaText('subtitleText', '', 1280, 0, screenHeight / 1.3)
+    makeLuaText('subtitleText', '', 1280, 0, screenHeight / 1.4)
     setTextAlignment('subtitleText', 'center')
     setObjectCamera('subtitleText', 'camOther')
     setTextSize('subtitleText', 30)
     setTextBorder('subtitleText', 0.5, '000000')
+    setObjCamEst('subtitleText')
     addLuaText('subtitleText')
 
     setTextSize('timeTxt', 22)
@@ -46,8 +55,8 @@ function onCreatePost()
 end
 
 function onUpdatePost()
-    setProperty('iconP1.origin.x', 150)
-    setProperty('iconP2.origin.x', 150)
+    setProperty('iconP1.offset.x', 0 * (getProperty('iconP1.scale.x') / 3))
+    setProperty('iconP2.offset.x', 0 * (getProperty('iconP2.scale.x') / 3))
     if songPath == 'i-hate-you' then
         setTextString('timeTxt', 'TIME\n'..math.floor((songLength - getSongPosition()) / 1000))
     end

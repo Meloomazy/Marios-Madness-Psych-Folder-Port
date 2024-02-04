@@ -1,0 +1,30 @@
+[
+	{
+		"save": "noShaders",
+		"name": "Disable Shaders",
+		"type": "bool",
+		"description": "Pretty self explanatory lol\nSet this to true if you're having a problem with shaders!", //Description shown on the mod settings menu
+		"value": false
+	},
+    {
+		"save": "noMechs",
+		"name": "Disable Mechanic",
+		"type": "bool",
+		"description": "Set to true if you're having a problem with the mechanics.\n[Affected Song: Powerdown, Unbeatable]",
+		"value": false
+	},
+    {
+		"save": "noVideoSprite",
+		"name": "Disable Video",
+		"type": "bool",
+		"description": "Check this if you don't want a video to be played.\n[Example: intro Demise]",
+		"value": false
+	},
+	{
+		"save": "forceWindow",
+		"name": "Window Effects",
+		"type": "bool",
+		"description": "Uncheck this to disable window effects, like movement and resolution.(WINDOWS ONLY)\n[Example: No Party & Somari, window resolution]\nThis also disable Paranoia Modchart",
+		"value": true
+	}
+]

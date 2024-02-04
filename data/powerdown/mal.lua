@@ -12,7 +12,7 @@ function onCreatePost()
     playAnim('jumpBF', 'land', true)
 end
 function onEvent(n,v1,v2)
-    if n == 'MX saltoa' then
+    if n == 'MX salto' and not getModSetting('noMechs') then
         playSound('warningmx', 1)
         dad = getProperty('dad.y')
 

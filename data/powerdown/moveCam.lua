@@ -31,11 +31,11 @@ setVar('dadZoom', dadZoom)
 setVar('bfZoom', bfZoom)
 
 setVar('camMove', true)
+setVar('camMoveZoom', true)
 
 local isGF = false
 function onSectionHit()
 	if getVar('camMove') then
-		runTimer('camreset', 1)
 		if not mustHitSection then
 			bfturn = false
 			if isGF then 
@@ -45,7 +45,7 @@ function onSectionHit()
 				campointx = getVar('posValDad')[1]
 				campointy = getVar('posValDad')[2]
 			end	
-			setProperty('defaultCamZoom', getVar('dadZoom'))
+            if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('dadZoom')) end
 		else
 			if isGF then 
 				campointx = getVar('posValGF')[1]
@@ -55,8 +55,10 @@ function onSectionHit()
 				campointy = getVar('posValBF')[2]
 			end	
 			bfturn = true
-			setProperty('defaultCamZoom', getVar('bfZoom'))
+			if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('bfZoom')) end
 		end
+		camlockx = campointx
+		camlocky = campointy
 	end
 end
 
