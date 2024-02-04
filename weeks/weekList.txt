@@ -2,5 +2,6 @@ MainMenu
 Mushroom Kingdom
 Irregularity Island
 Woodland Of Lies
+Content Cosmos
 Hellish Heights
 Classified Castle
