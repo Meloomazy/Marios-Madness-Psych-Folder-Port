@@ -7,6 +7,12 @@ var estaland;
 
 var landbg = [];
 var eventTweens = [];
+
+var useShader = !getModSetting('noShaders');
+
+var test5;
+var tvstatic;
+
 function onCreate(){
     //game.skipCountdown = true;
 
@@ -76,6 +82,27 @@ function onCreate(){
     add(estaland);
     
     game.defaultCamZoom = 0.8;
+    return;
+}
+function onCreatePost(){
+    if (useShader){
+        game.initLuaShader('TVStatic');
+        game.initLuaShader('test5');
+        tvstatic = game.createRuntimeShader('TVStatic');
+        test5 = game.createRuntimeShader('test5');
+        tvstatic.setFloat('strengthMulti', 0.5);
+        tvstatic.setFloat('imtoolazytonamethis', 0.3);
+
+        var sh = [new ShaderFilter(test5), new ShaderFilter(tvstatic)];
+        game.camGame.filters = sh;
+    }
+    return;
+}
+
+var g = 0;
+function onUpdate(e){
+    g += e;
+    tvstatic.setFloat('iTime', g);
     return;
 }
 
