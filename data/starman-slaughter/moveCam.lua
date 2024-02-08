@@ -113,6 +113,8 @@ function onUpdate()
 	if getVar('camMove') then
 		setProperty('camFollow.x', camlockx)
 		setProperty('camFollow.y', camlocky)
+	else
+		runHaxeCode("FlxG.camera.snapToTarget()")
 	end
 end
 

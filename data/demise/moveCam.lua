@@ -21,6 +21,14 @@ local bfMove = 60
 local dadZoom = 0.4
 local bfZoom = 0.6
 
+local campointx = posValDad[1]
+local campointy = posValDad[2]
+local camlockx = campointx
+local camlocky = campointy
+local camlock = true
+local bfturn = false
+local camon = true
+
 setVar('posValDad', posValDad)
 setVar('posValBF', posValBF)
 setVar('posValGF', posValGF)
@@ -31,75 +39,71 @@ setVar('dadZoom', dadZoom)
 setVar('bfZoom', bfZoom)
 
 setVar('camMove', true)
+setVar('camMoveZoom', true)
 
-function onMoveCameraa()
-    if getVar('camMove') then
-		if not mustHitSection then
-            campointx = getVar('posValDad')[1]
-			campointy = getVar('posValDad')[2]
-		end
-	end
-end
+local isGF = false
 function onSectionHit()
-	if getVar('camMove') then
-		if not mustHitSection then
-			bfturn = false
-			setProperty('defaultCamZoom', getVar('dadZoom'))
+	if not mustHitSection then
+		bfturn = false
+		if isGF then 
+			campointx = getVar('posValGF')[1]
+			campointy = getVar('posValGF')[2]    
 		else
-			bfturn = true
-			setProperty('defaultCamZoom', getVar('bfZoom'))
-		end
+			campointx = getVar('posValDad')[1]
+			campointy = getVar('posValDad')[2]
+		end	
+		if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('dadZoom')) end
+	else
+		if isGF then 
+			campointx = getVar('posValGF')[1]
+			campointy = getVar('posValGF')[2]    
+		else
+			campointx = getVar('posValBF')[1]
+			campointy = getVar('posValBF')[2]
+		end	
+		bfturn = true
+		if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('bfZoom')) end
 	end
+	camlockx = campointx
+	camlocky = campointy
 end
 
 function goodNoteHit(id, direction, noteType, isSustainNote)
     if bfturn then
-        if noteType == 'GF Sing' then
-            campointx = getVar('posValGF')[1]
-            campointy = getVar('posValGF')[2]    
-        else
-            campointx = getVar('posValBF')[1]
-            campointy = getVar('posValBF')[2]
-        end
-            if direction == 0 then
-                camlockx = campointx - getVar('bfMove')
-                camlocky = campointy
-            elseif direction == 1 then
-                camlocky = campointy + getVar('bfMove')
-                camlockx = campointx
-            elseif direction == 2 then
-                camlocky = campointy - getVar('bfMove')
-                camlockx = campointx
-            elseif direction == 3 then
-                camlockx = campointx + getVar('bfMove')
-                camlocky = campointy
-            end
+		isGF = (noteType == 'GF Sing')
+		if direction == 0 then
+			camlockx = campointx - getVar('bfMove')
+			camlocky = campointy
+		elseif direction == 1 then
+			camlocky = campointy + getVar('bfMove')
+			camlockx = campointx
+		elseif direction == 2 then
+			camlocky = campointy - getVar('bfMove')
+			camlockx = campointx
+		elseif direction == 3 then
+			camlockx = campointx + getVar('bfMove')
+			camlocky = campointy
+		end
         runTimer('camreset', 1)
     end
 end
 
 function opponentNoteHit(id, direction, noteType, isSustainNote)
     if not bfturn then
-        if noteType == 'GF Sing' then
-            campointx = getVar('posValGF')[1]
-            campointy = getVar('posValGF')[2]    
-        else
-            campointx = getVar('posValDad')[1]
-            campointy = getVar('posValDad')[2]
-        end
-            if direction == 0 then
-                camlockx = campointx - getVar('dadMove')
-                camlocky = campointy
-            elseif direction == 1 then
-                camlocky = campointy + getVar('dadMove')
-                camlockx = campointx
-            elseif direction == 2 then
-                camlocky = campointy - getVar('dadMove')
-                camlockx = campointx
-            elseif direction == 3 then
-                camlockx = campointx + getVar('dadMove')
-                camlocky = campointy
-            end
+		isGF = (noteType == 'GF Sing')
+		if direction == 0 then
+			camlockx = campointx - getVar('dadMove')
+			camlocky = campointy
+		elseif direction == 1 then
+			camlocky = campointy + getVar('dadMove')
+			camlockx = campointx
+		elseif direction == 2 then
+			camlocky = campointy - getVar('dadMove')
+			camlockx = campointx
+		elseif direction == 3 then
+			camlockx = campointx + getVar('dadMove')
+			camlocky = campointy
+		end
         runTimer('camreset', 1)
     end
 end
@@ -124,23 +128,23 @@ function onEvent(n,v1,v2)
 	if n == 'Set Cam Pos' then
 		if v2 == 'bf' then
 			local pos = stringSplit(v1, ", ")
-			posValBF = {pos[1], pos[2]}
+            setVar('posValBF', {pos[1], pos[2]})
 		end
 		if v2 == 'dad' then
 			local pos = stringSplit(v1, ", ")
-			posValDad = {pos[1], pos[2]}
+			setVar('posValDad', {pos[1], pos[2]})
 		end
 	end
 	if n == 'Set Cam Zoom' then
-		if v2 == '' then
-			dadZoom = tonumber(v1)
-			bfZoom = tonumber(v1)
-		end
+        if v2 == '' then
+            setVar('dadZoom', tonumber(v1))
+            setVar('bfZoom', tonumber(v1))
+        end
 		if v2 == 'dad' then
-			dadZoom = tonumber(v1)
+            setVar('dadZoom', tonumber(v1))
 		end
 		if v2 == 'bf' then
-			bfZoom = tonumber(v1)
+            setVar('bfZoom', tonumber(v1))
 		end
 	end
 end

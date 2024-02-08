@@ -7,14 +7,17 @@ import objects.BGSprite;
 var col = [];
 var disabled = true; // Disabled because we use MM note skin instead :>
 var sn = Paths.formatToSongPath(game.songName.toLowerCase());
-var stG = PlayState.curStage;
+
+var camEst;
+//mainly for strums modchart
+var camStrum1;
+var camStrum2;
 
 var autor = '---';
 var titleText;
 var autorText;
 var line2;
 var line1;
-var camEst;
 var sgCol; 
 
 var titleNES;
@@ -24,31 +27,7 @@ var djStart;
 var animReturnDad = false;
 
 var eventTweens = [];
-switch(sn){
-    case 'paranoia':
-        PlayState.daPixelZoom = 3.5;
-    case 'no-party':
-        PlayState.daPixelZoom = 1.85;
-    default:
-        PlayState.daPixelZoom = 6;
-}
-
 function onCreate(){
-    FlxG.cameras.remove(game.camHUD,false);
-    FlxG.cameras.remove(game.camOther,false);
-    camEst = new FlxCamera();
-    camEst.bgColor = 0x00;
-    setVar('camEst', camEst);
-    FlxG.cameras.add(camEst,false);
-    FlxG.cameras.add(game.camHUD,false);
-    FlxG.cameras.add(game.camOther,false);
-
-    sgCol = (sn == 'golden-land' ? 0xFFADADAD : 0xFFF42626);
-    
-    var ratingD = ['sick', 'good', 'bad', 'shit'];
-    for (i in 0...4){
-        ratingsData[i].image = 'rating/' + (sn == 'golden-land' ? 'gb' : '')  + ratingD[i];
-    }
     switch(sn){
         case 'paranoia':
             col = [0xFFFF0000, 0xFFFFFFFF, 0xFF000000];
@@ -59,6 +38,7 @@ function onCreate(){
         case 'overdue-joke':
             col = [0xFF83a27d,0xFF151028, 0xFFafaf8c];
         case 'the-end':
+            col = [0xff422929,0xFFFFFFFF, 0xFFafaf8c];
             col = [0xff000000,0xFFFFFFFF, 0xFFafaf8c];
             disabled = false;
         default: disabled = true;
@@ -81,6 +61,7 @@ function onCreate(){
         case 'unbeatable':
             autor = 'RedTV53 ft. Ironik';
         case 'paranoia':
+            PlayState.daPixelZoom = 3.5;
             autor = 'Sandi ft. iKenny';
         case 'overdue':
             autor = 'FriedFrick ft. Sandi';
@@ -92,14 +73,52 @@ function onCreate(){
             autor = 'Sandi';
         case 'dictator':
             autor = 'Kenny L';
-    	case 'last-course':
-			autor = 'FriedFrick ft. Sandi';
+        case 'last-course':
+            autor = 'FriedFrick ft. Sandi';
         case 'the-end':
             autor = 'Kenny L';
         case 'mario-sing-and-game-rythm-9':
             autor = 'TaeSkull';
         case 'no-party':
+            PlayState.daPixelZoom = 1.85;
             autor = 'Kenny L';
+        default:
+            PlayState.daPixelZoom = 6;
+    }
+
+    FlxG.cameras.remove(game.camHUD,false);
+    FlxG.cameras.remove(game.camOther,false);
+    
+    camEst = new FlxCamera();
+    camEst.bgColor = 0x00;
+    setVar('camEst', camEst);
+
+    camStrum1 = new FlxCamera();
+    camStrum1.bgColor = 0x00;
+    setVar('camStrum1', camStrum1);
+    camStrum2 = new FlxCamera();
+    camStrum2.bgColor = 0x00;
+    setVar('camStrum2', camStrum2);
+
+    FlxG.cameras.add(camEst,false);
+    FlxG.cameras.add(camStrum1,false);
+    FlxG.cameras.add(camStrum2,false);
+    FlxG.cameras.add(game.camHUD,false);
+    FlxG.cameras.add(game.camOther,false);
+
+    createGlobalCallback('setObjCamEst', function(tag:String){
+        game.getLuaObject(tag).camera = camEst;
+    });
+    createGlobalCallback('camStrumShake', function(int:Float, dur:Float){
+        camStrum1.shake(int, dur);
+        camStrum2.shake(int, dur);
+    });
+
+    sgCol = (sn == 'golden-land' ? 0xFFADADAD : 0xFFF42626);
+    
+    var ratingD = ['sick', 'good', 'bad', 'shit'];
+    for (i in 0...4){
+        ratingsData[i].image = 'rating/' + (sn == 'golden-land' ? 'gb' : '')  + ratingD[i];
     }
 
     titleText = new FlxText(400, 304.5, 0, PlayState.SONG.song, 42);
@@ -122,6 +141,9 @@ function onCreate(){
     setVar('autorText', autorText);
     add(autorText);
     autorText.addFormat(format);
+
+    setVar('titText', titleText.text);
+    setVar('autText', autorText.text);
 
     if (sn == 'mario-sing-and-game-rythm-9'){
         titleNES = new FlxSprite();
@@ -160,10 +182,6 @@ function onCreate(){
     return;
 }
 
-createGlobalCallback('setObjCamEst', function(tag:String){
-    game.getLuaObject(tag).camera = camEst;
-});
-
 function onCreatePost(){
     switch(sn){
         case 'paranoia':
@@ -174,6 +192,7 @@ function onCreatePost(){
 				    note.updateHitbox();
                 }
             }
+            uiGroup.color = 0xff0000;
             sgCol = 0xff0000;
         case 'no-party':
             for (note in game.unspawnNotes){
@@ -205,8 +224,18 @@ function onCreatePost(){
     }
     
     comboGroup.camera = camGame;
-    comboGroup.x = gfGroup.x;
-    comboGroup.y = gfGroup.y;
+    comboGroup.x = gf.x;
+    comboGroup.y = gf.y;
+
+
+    for (strum in game.playerStrums)
+        strum.camera = camStrum2;
+    for (strum in game.opponentStrums)
+        strum.camera = camStrum1;
+    for (note in game.unspawnNotes){
+        if (note.mustPress) note.camera = camStrum2;
+        else note.camera = camStrum1;
+    }
 
     return;
 }
@@ -230,6 +259,16 @@ function goodNoteHit(i){
     return;
 }
 function onUpdatePost(){
+    for (splash in game.grpNoteSplashes)
+        splash.camera = camStrum2;
+
+    for (su in [camStrum1, camStrum2]){
+        su.alpha = camHUD.alpha;
+        su.angle = camHUD.angle;
+        su.zoom = camHUD.zoom;
+        su.filters = camHUD.filters;
+    }
+
     if (animReturnDad){
         var currentAnim = dad.animation.curAnim;
         if (!currentAnim.finished) dad.holdTimer = 0;
@@ -244,6 +283,21 @@ function onUpdatePost(){
 
 function onEvent(n,v1,v2){
     switch(n){
+        case 'Triggers Unbeatable' | 'Triggers Universal':
+            if (sn == 'unbeatable'){
+                if (v1 == '2'){
+                    titleText.text = 'Unbeatable(Level 2)';
+                    autorText.text = 'scrumbo_';
+                }
+                if (v1 == '11'){
+                    titleText.text = 'Unbeatable(Level 3)';
+                    autorText.text = 'theWAHbox ft. RedTV53';             
+                }
+                if (v1 == '17'){
+                    titleText.text = 'Unbeatable(Level 4)';
+                    autorText.text = 'RedTV53 ft. FriedFrick';           
+                }
+            }
         case 'Change Character':
             switch(dad.curCharacter){
                 case 'gbv2evil':
@@ -282,7 +336,7 @@ function onEvent(n,v1,v2){
                         if (titleText.width >= autorText.width){
                             checkwidth = titleText.width;
                         }
-                    
+
                         line2 = new FlxSprite(566, titleText.y + 57).makeGraphic(Std.int(checkwidth), 5, FlxColor.BLACK);
                         line2.camera = camEst;
                         line2.screenCenter(0x11);
@@ -294,11 +348,7 @@ function onEvent(n,v1,v2){
                         line1.alpha = 0;
                         add(line1);
                         add(line2);
-        
-                        titleText.visible = true;
-                        autorText.visible = true;
-                        line1.visible = true;
-                        line2.visible = true;
+
                         titleText.y = 304.5;
                         autorText.y = titleText.y + 70;
                         line2.y 	= titleText.y + 57;
@@ -323,10 +373,8 @@ function onEvent(n,v1,v2){
                         FlxTween.tween(line2, {alpha: 0}, 0.5, {ease: FlxEase.cubeOut});
         
                         new FlxTimer().start(0.5, function(tmr:FlxTimer){
-                                titleText.visible = false;
-                                autorText.visible = false;
-                                line1.visible = false;
-                                line2.visible = false;
+                                titleText.alpha = 0;
+                                autorText.alpha = 0;
                                 remove(line1);
                                 remove(line2);
                         });

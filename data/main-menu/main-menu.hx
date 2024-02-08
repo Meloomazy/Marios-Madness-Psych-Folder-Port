@@ -124,7 +124,7 @@ function onCustomSubstateCreate(n) {
         background.cameras = [game.camGame];
 
         overlay = new FlxSprite();
-        overlay.frames = Paths.getSparrowAtlas("estatica_uwu");
+        overlay.frames = Paths.getSparrowAtlas("modstuff/estatica_uwu");
         overlay.animation.addByPrefix("static", "Estatica papu", 15);
         overlay.animation.play("static");
         overlay.antialiasing = false;
@@ -135,7 +135,7 @@ function onCustomSubstateCreate(n) {
         CustomSubstate.instance.add(overlay);
         overlay.cameras = [game.camGame];
 
-        vignette = new FlxSprite(0, 0, Paths.image("126"));
+        vignette = new FlxSprite(0, 0, Paths.image("modstuff/126"));
         vignette.scrollFactor.set();
         vignette.alpha = 0.9;
         vignette.updateHitbox();
@@ -143,7 +143,7 @@ function onCustomSubstateCreate(n) {
         CustomSubstate.instance.add(vignette);
         vignette.cameras = [game.camGame];
 
-        vignetteFP = new FlxSprite(0, 0, Paths.image("HUD_Freeplay_2"));
+        vignetteFP = new FlxSprite(0, 0, Paths.image("freeplay/HUD_Freeplay_2"));
         vignetteFP.scrollFactor.set();
         vignetteFP.alpha = 0;
         vignetteFP.updateHitbox();
@@ -335,7 +335,7 @@ function onCustomSubstateCreate(n) {
         CustomSubstate.instance.add(rArrow);
         rArrow.cameras = [game.camGame];
 
-        songText = new FlxText(0, 0, 1280, "Test Song");
+        songText = new FlxText(0, 0, 1280, "Golden Land");
 		songText.setFormat(Paths.font("Mario64.ttf"), 30, FlxColor.RED, "center", Type.resolveEnum('flixel.text.FlxTextBorderStyle').OUTLINE, 0xFF000000);
         songText.borderSize = 3;
         songText.scrollFactor.set();

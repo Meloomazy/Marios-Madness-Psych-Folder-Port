@@ -124,8 +124,8 @@ function onCreate(){
     add(meat5f);
 
 
-    for (meat in streetGroup) meat.alpha = 0.001;
-    //for (meat in meatForeGroup) meat.alpha = 0.001;
+    for (meat in meatworldGroup) meat.alpha = 0.001;
+    for (meat in meatForeGroup) meat.alpha = 0.001;
 
     var fogblack:FlxSprite = new FlxSprite().loadGraphic(Paths.image('modstuff/126'));
     fogblack.antialiasing = ClientPrefs.data.antialiasing;
@@ -141,7 +141,6 @@ function onCreate(){
     meatfog.screenCenter();
     add(meatfog);
 
-    /*
     hallTLL1 = new FlxBackdrop(0x01, -1170);
     hallTLL1.frames = Paths.getSparrowAtlas('stages/TooLateBG/Too_Late_Luigi_Hallway');
     hallTLL1.animation.addByPrefix('idle', "tll idle",   24, false);
@@ -153,7 +152,7 @@ function onCreate(){
     hallTLL1.updateHitbox();
     hallTLL1.antialiasing = true;
     hallTLL1.velocity.set(-2800, 0);
-    hallTLL1.alpha = 1;
+    hallTLL1.alpha = 0.001;
 
     hallTLL2 = new FlxBackdrop(0x01, -1170);
     hallTLL2.frames = Paths.getSparrowAtlas('stages/TooLateBG/Too_Late_Luigi_Hallway');
@@ -162,30 +161,29 @@ function onCreate(){
     hallTLL2.updateHitbox();
     hallTLL2.antialiasing = true;
     hallTLL2.velocity.set(-2240, 0);
-    hallTLL2.alpha = 1;
+    hallTLL2.alpha = 0.001;
     hallTLL2.color = 0xFF979797;
 
     hallTLL3 = new FlxBackdrop(0x01, -1170);
     hallTLL3.frames = Paths.getSparrowAtlas('stages/TooLateBG/Too_Late_Luigi_Hallway');
-    hallTLL3.animation.addByPrefix('idle', "tll idle",   24, false);
+    hallTLL3.animation.addByPrefix('idle', "tll idle",  24, false);
     hallTLL3.scale.set(0.6, 0.6);
     hallTLL3.updateHitbox();
     hallTLL3.antialiasing = true;
     hallTLL3.velocity.set(-1680, 0);
-    hallTLL3.alpha = 1;
+    hallTLL3.alpha = 0.001;
     hallTLL3.color = 0xFF696969;
-    addBehindDad(hallTLL3);
-    addBehindDad(hallTLL2);
-    addBehindDad(hallTLL1);
+    addBehindBF(hallTLL3);
+    addBehindBF(hallTLL2);
+    addBehindBF(hallTLL1);
 
     fgTLL = new FlxBackdrop(Paths.image('stages/TooLateBG/feet/FG_Too_Late_Luigi'), 0x01, 1545);
     fgTLL.updateHitbox();
     fgTLL.antialiasing = true;
     fgTLL.velocity.set(-3920, 0);
-    fgTLL.alpha = 1;
+    fgTLL.alpha = 0.001;
     add(fgTLL);
-        */
-
+    
     blackBarThingie = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
     blackBarThingie.setGraphicSize(Std.int(blackBarThingie.width * 10));
     blackBarThingie.scrollFactor.set(0, 0);
@@ -203,15 +201,15 @@ function onCreate(){
     gunAmmo.scale.set(0.65, 0.65);
     gunAmmo.updateHitbox();
     gunAmmo.alpha = 0.8;
-    //addBehindGF(gunAmmo);
+    addBehindGF(gunAmmo);
     return;
 }
-var BF_X;
-var BF_Y;
+var BF_OGX;
+var BF_OGY;
 
 function onCreatePost(){
-    BF_X = boyfriendGroup.x;
-    BF_Y = boyfriendGroup.y;
+    BF_OGX = boyfriendGroup.x;
+    BF_OGY = boyfriendGroup.y;
 
     iconP3 = new HealthIcon('latemario', true);
 	iconP3.y = healthBar.y - 125;
@@ -323,7 +321,7 @@ function onEvent(n,v1,v2){
                 eventTweens.push(FlxTween.tween(gfGroup, {x: gfGroup.x - 30}, 4, {startDelay: 0.2, ease: FlxEase.quadInOut, type: 4}));
                 eventTweens.push(FlxTween.tween(camFollow, {x: getVar('posValBF')[0], y: getVar('posValBF')[1]}, 5, {ease: FlxEase.sineInOut}));
                 eventTweens.push(FlxTween.tween(camGame, {zoom: getVar('bfZoom')}, 5, {ease: FlxEase.sineInOut}));
-                eventTweens.push(FlxTween.tween(gfGroup, {alpha: 0.7}, 5));
+                eventTweens.push(FlxTween.tween(gf, {alpha: 0.7}, 5));
                 eventTweens.push(FlxTween.tween(iconP3, {alpha: 0.7}, 5));
             case 6:
                 eventTweens.push(FlxTween.tween(castleFloor, {alpha: 1}, 10));
@@ -357,7 +355,7 @@ function onEvent(n,v1,v2){
                 game.triggerEvent('Set Cam Zoom', '0.5', 'bf');
                 game.triggerEvent('Set Cam Zoom', '0.35', 'dad');
                 game.triggerEvent('fuckoff', '', '');
-                boyfriendGroup.setPosition(BF_X - 150, BF_Y);
+                boyfriendGroup.setPosition(BF_OGX - 150, BF_OGY);
 
                 hallTLL1.animation.play('idle');
                 eventTweens.push(FlxTween.tween(hallTLL1, {alpha: 1}, 0.2));

@@ -1,6 +1,9 @@
-
 if buildTarget == 'android' then
     return -- return the script if it on android   -Tatoraa
+end
+
+if not getModSetting('forceWindow') then
+    return
 end
 
 local winSave = {

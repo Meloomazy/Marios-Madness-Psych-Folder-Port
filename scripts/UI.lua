@@ -136,6 +136,7 @@ function onBeatHit()
                 local duration = ((1 / (curBpm / 60)) / 2) * timeBeat
                 cameraShake('camHUD', hudShake, duration)
                 cameraShake('camGame', gameShake, duration)
+                camStrumShake(hudShake, duration)
             end
         end
     end
@@ -145,6 +146,7 @@ function onBeatHit()
         local duration = 1 / (curBpm / 60)
         cameraShake('camHUD', hudShake, duration)
         cameraShake('camGame', gameShake, duration)
+        camStrumShake(hudShake, duration)
     end
 end
 

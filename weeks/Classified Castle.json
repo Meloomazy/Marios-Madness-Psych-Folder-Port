@@ -1,5 +1,7 @@
 {
 	"songs": [
+		["Promotion", "promo", [255,44,0]],
+		["Abandoned", "wdwluigi", [116,166,19]],
 		["The End", "costume", [15, 15, 15]]
 	],
 

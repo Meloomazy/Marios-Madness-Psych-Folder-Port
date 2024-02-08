@@ -472,11 +472,15 @@ function onEvent(n,v1,v2)
         end
         if v1 == 'duckCrosshair' then
             if v2 == 'lol' then
+                setProperty('camGame.alpha',0)
+                setProperty('camHUD.alpha',0)
                 setProperty('camGame.visible',false)
                 setProperty('camHUD.visible',false)
                 setProperty('duckCH.alpha', 1)
                 setProperty('duckCH.color', (getProperty('duckCH.color') == getColorFromHex('FF0000') and getColorFromHex('FFFFFF') or getColorFromHex('FF0000')))
             else
+                setProperty('camGame.alpha',1)
+                setProperty('camHUD.alpha',1)
                 removeLuaSprite('duckCH', false)
                 setProperty('camGame.visible',true)
                 setProperty('camHUD.visible',true)
@@ -507,6 +511,7 @@ end
 function onTimerCompleted(t)
     if t == 'barsMovement' then
         lofiTweensToBeCreepyTo()
+        runTimer('barsMovement', 21.5)
     end
     if t == 'thefogiscoming' then
         setProperty('sky_ithink.color', getColorFromHex('73aafd'))

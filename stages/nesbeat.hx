@@ -267,23 +267,7 @@ function onEvent(n, v1, v2) {
             fellas2.animation.play('lakitu', true);
         }
     }
-    if (n == 'Triggers Universal'){
-        if (v1 == '2'){
-			getVar('titleText').text = 'Unbeatable(Level 2)';
-			getVar('autorText').text = 'scrumbo_';
-        }
-        if (v1 == '11'){
-            if (v2 == '4'){
-                getVar('titleText').text = 'Unbeatable(Level 3)';
-                getVar('autorText').text = 'theWAHbox ft. RedTV53';
-            }                
-        }
-        if (v1 == '17'){
-            if (v2 == '2'){
-                getVar('titleText').text = 'Unbeatable(Level 4)';
-                getVar('autorText').text = 'RedTV53 ft. FriedFrick';
-            }                
-        }
+    if (n == 'Triggers Universal' || n == 'Triggers Unbeatable'){
         if (v1 == '28') {
             switch(v2){
                 case '3':

@@ -34,7 +34,7 @@ var whiteThingie:FlxSprite;
 var fogred:FlxSprite;
 
 var extraTween = [];
-var eventTweens = []; // i forgot why this exist
+var eventTweens = []; // i dont forgot anymore
 
 var useShader = !getModSetting('noShaders');
 
@@ -429,4 +429,16 @@ function onBeatHit(){
     if(demFlash){
         FlxTween.color(demColor, (1 / (Conductor.bpm / 60)), 0xFF4D0000, FlxColor.BLACK);
     }
+    return;
+}
+
+
+function onPause(){
+    for (t in eventTweens) t.active = false;
+    return;
+}
+
+function onResume(){
+    for (t in eventTweens) t.active = true;
+    return;
 }

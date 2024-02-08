@@ -35,31 +35,29 @@ setVar('camMoveZoom', true)
 
 local isGF = false
 function onSectionHit()
-	if getVar('camMove') then
-		if not mustHitSection then
-			bfturn = false
-			if isGF then 
-				campointx = getVar('posValGF')[1]
-				campointy = getVar('posValGF')[2]    
-			else
-				campointx = getVar('posValDad')[1]
-				campointy = getVar('posValDad')[2]
-			end	
-            if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('dadZoom')) end
+	if not mustHitSection then
+		bfturn = false
+		if isGF then 
+			campointx = getVar('posValGF')[1]
+			campointy = getVar('posValGF')[2]    
 		else
-			if isGF then 
-				campointx = getVar('posValGF')[1]
-				campointy = getVar('posValGF')[2]    
-			else
-				campointx = getVar('posValBF')[1]
-				campointy = getVar('posValBF')[2]
-			end	
-			bfturn = true
-			if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('bfZoom')) end
-		end
-		camlockx = campointx
-		camlocky = campointy
+			campointx = getVar('posValDad')[1]
+			campointy = getVar('posValDad')[2]
+		end	
+		if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('dadZoom')) end
+	else
+		if isGF then 
+			campointx = getVar('posValGF')[1]
+			campointy = getVar('posValGF')[2]    
+		else
+			campointx = getVar('posValBF')[1]
+			campointy = getVar('posValBF')[2]
+		end	
+		bfturn = true
+		if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('bfZoom')) end
 	end
+	camlockx = campointx
+	camlocky = campointy
 end
 
 function goodNoteHit(id, direction, noteType, isSustainNote)
@@ -118,7 +116,6 @@ function onUpdate()
 			setProperty('camGame.targetOffset.x', 150 * math.sin(getSongPosition()/2500))
 			setProperty('camGame.targetOffset.y', 200 * math.sin(getSongPosition()/1500))
 		else
-			setProperty('isCameraOnForcedPos', false)
 			setProperty('camGame.targetOffset.x',0)
 			setProperty('camGame.targetOffset.y',0)
 		end

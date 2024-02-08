@@ -104,7 +104,7 @@ end
 
 
 function HA() -- i love this silly thing -meloom
-    -- changed to a better one even though use haxe :troll: -tatoraa
+    -- changed to a better one even though use haxe -tatoraa
     runHaxeCode([[
         var h:FlxText = new FlxText(iconP2.x - 50, iconP2.y, 600, 'HA!', 20);
         h.setFormat(Paths.font("mariones.ttf"), 25, FlxColor.WHITE, 'left');
