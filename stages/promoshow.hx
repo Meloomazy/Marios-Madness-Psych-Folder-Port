@@ -166,8 +166,10 @@ function onBeatHit(){
 }
 
 function onEvent(n,v1,v2){
-    if (n == 'Set Property'){
-        if (v1 == 'cameraTilt') tilt = Std.parseFloat(v2);
+    if (n == 'setProperty'){
+        if (v1 == 'cameraTilt'){
+            tilt = Std.parseFloat(v2);
+        }
     }
     if (n == 'Triggers Promotion' || n == 'Triggers Universal'){
         var triggerMR:Float = Std.parseFloat(v1);
