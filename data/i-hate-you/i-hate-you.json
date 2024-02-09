@@ -6156,12 +6156,13 @@
                 "mustHitSection": true
             }
         ],
-        "gfVersion": "gfihyv2",
+        "player3": "gfihyv2",
         "offset": 0,
         "song": "I Hate You",
         "validScore": true,
         "speed": 2.9,
         "events": [],
+        "gfVersion": "gfihyv2",
         "eventObjects": [
             {
                 "type": "BPM Change",

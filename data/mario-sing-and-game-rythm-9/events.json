@@ -2,107 +2,7 @@
     "song": {
         "events": [
             [
-                4102.5641025641,
-                [
-                    [
-                        "Show Song",
-                        "",
-                        ""
-                    ]
-                ]
-            ],
-            [
-                8205.12820512821,
-                [
-                    [
-                        "Show Song",
-                        "1",
-                        ""
-                    ]
-                ]
-            ],
-            [
                 114871.794871795,
-                [
-                    [
-                        "Triggers Universal",
-                        "1",
-                        "left"
-                    ]
-                ]
-            ],
-            [
-                116923.076923077,
-                [
-                    [
-                        "Triggers Universal",
-                        "1",
-                        "right"
-                    ]
-                ]
-            ],
-            [
-                118974.358974359,
-                [
-                    [
-                        "Triggers Universal",
-                        "1",
-                        "left"
-                    ]
-                ]
-            ],
-            [
-                121025.641025641,
-                [
-                    [
-                        "Triggers Universal",
-                        "1",
-                        "right"
-                    ]
-                ]
-            ],
-            [
-                123076.923076923,
-                [
-                    [
-                        "Triggers Universal",
-                        "1",
-                        "left"
-                    ]
-                ]
-            ],
-            [
-                125128.205128205,
-                [
-                    [
-                        "Triggers Universal",
-                        "1",
-                        "right"
-                    ]
-                ]
-            ],
-            [
-                127179.487179487,
-                [
-                    [
-                        "Triggers Universal",
-                        "1",
-                        "left"
-                    ]
-                ]
-            ],
-            [
-                129230.769230769,
-                [
-                    [
-                        "Triggers Universal",
-                        "1",
-                        "double"
-                    ]
-                ]
-            ],
-            [
-                130769.230769231,
                 [
                     [
                         "Triggers Universal",
@@ -162,12 +62,12 @@
                 ]
             ],
             [
-                186666.666666667,
+                185512.820512821,
                 [
                     [
                         "Triggers Universal",
                         "1",
-                        "double"
+                        "full"
                     ]
                 ]
             ],

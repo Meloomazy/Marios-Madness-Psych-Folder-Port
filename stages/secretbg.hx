@@ -62,6 +62,10 @@ function onCreatePost(){
             note.texture = 'stages/secret/BulletBillMario_NOTE_assets';
             note.noAnimation = true;
             note.offsetX -= 50;
+            if (ClientPrefs.data.downScroll){
+                note.flipY = true;
+                note.offsetY -= 550;
+            }
         }
         if (note.noteType == 'Bullet2'){
             note.visible = false;
@@ -100,13 +104,17 @@ function bulletBillSplash(id){
     spl.frames = Paths.getSparrowAtlas('stages/secret/BulletBillMario_NOTE_assets');
     spl.animation.addByPrefix('boom', 'notesplash', 24, false);
     spl.antialiasing = ClientPrefs.data.antialiasing;
-    spl.offset.x += 410;
+    spl.offset.x += 460;
     spl.offset.y += 350;
     spl.camera = camHUD;
+    if (ClientPrefs.data.downScroll){
+        spl.flipY = true;
+       spl.offset.y += 350;
+    }
+    spl.animation.play('boom', true);
     spl.animation.finishCallback = (_) -> {
         remove(spl);
     }
-    spl.animation.play('boom', true);
     add(spl);
 }
 

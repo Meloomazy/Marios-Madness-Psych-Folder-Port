@@ -45,7 +45,6 @@ function onSectionHit()
 				campointx = getVar('posValDad')[1]
 				campointy = getVar('posValDad')[2]
 			end	
-            if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('dadZoom')) end
 		else
 			if isGF then 
 				campointx = getVar('posValGF')[1]
@@ -55,7 +54,6 @@ function onSectionHit()
 				campointy = getVar('posValBF')[2]
 			end	
 			bfturn = true
-			if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('bfZoom')) end
 		end
 		camlockx = campointx
 		camlocky = campointy
@@ -112,9 +110,18 @@ function onTimerCompleted(tag, loops, loopsLeft)
 end
 
 function onUpdate()
+	if getVar('camMoveZoom') then
+		if mustHitSection then
+			setProperty('defaultCamZoom', getVar('bfZoom'))
+		else
+			setProperty('defaultCamZoom', getVar('dadZoom'))
+		end
+	end
 	if getVar('camMove') then
 		setProperty('camFollow.x', camlockx)
 		setProperty('camFollow.y', camlocky)
+	else
+		runHaxeCode("FlxG.camera.snapToTarget()")
 	end
 end
 

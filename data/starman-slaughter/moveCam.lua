@@ -35,29 +35,29 @@ setVar('camMoveZoom', true)
 
 local isGF = false
 function onSectionHit()
-	if not mustHitSection then
-		bfturn = false
-		if isGF then 
-			campointx = getVar('posValGF')[1]
-			campointy = getVar('posValGF')[2]    
+	if getVar('camMove') then
+		if not mustHitSection then
+			bfturn = false
+			if isGF then 
+				campointx = getVar('posValGF')[1]
+				campointy = getVar('posValGF')[2]    
+			else
+				campointx = getVar('posValDad')[1]
+				campointy = getVar('posValDad')[2]
+			end	
 		else
-			campointx = getVar('posValDad')[1]
-			campointy = getVar('posValDad')[2]
-		end	
-		if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('dadZoom')) end
-	else
-		if isGF then 
-			campointx = getVar('posValGF')[1]
-			campointy = getVar('posValGF')[2]    
-		else
-			campointx = getVar('posValBF')[1]
-			campointy = getVar('posValBF')[2]
-		end	
-		bfturn = true
-		if getVar('camMoveZoom') then setProperty('defaultCamZoom', getVar('bfZoom')) end
+			if isGF then 
+				campointx = getVar('posValGF')[1]
+				campointy = getVar('posValGF')[2]    
+			else
+				campointx = getVar('posValBF')[1]
+				campointy = getVar('posValBF')[2]
+			end	
+			bfturn = true
+		end
+		camlockx = campointx
+		camlocky = campointy
 	end
-	camlockx = campointx
-	camlocky = campointy
 end
 
 function goodNoteHit(id, direction, noteType, isSustainNote)
@@ -110,6 +110,13 @@ function onTimerCompleted(tag, loops, loopsLeft)
 end
 
 function onUpdate()
+	if getVar('camMoveZoom') then
+		if mustHitSection then
+			setProperty('defaultCamZoom', getVar('bfZoom'))
+		else
+			setProperty('defaultCamZoom', getVar('dadZoom'))
+		end
+	end
 	if getVar('camMove') then
 		setProperty('camFollow.x', camlockx)
 		setProperty('camFollow.y', camlocky)

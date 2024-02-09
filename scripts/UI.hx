@@ -49,20 +49,22 @@ function onCreate(){
         case 'golden-land':
             autor = 'FriedFrick';
         case 'all-stars':
-            autor = 'iKenny';
+            autor = 'Kenny L';
         case 'i-hate-you':
-            autor = 'iKenny';
+            autor = 'Kenny L';
+        case 'dark-forest':
+            autor = 'Kenny L';
         case 'powerdown':
-            autor = 'iKenny ft. TaeSkull';
+            autor = 'Kenny L ft. TaeSkull';
         case 'alone':
             autor = 'RedTV53';
         case 'demise':
-            autor = 'iKenny';
+            autor = 'Kenny L';
         case 'unbeatable':
             autor = 'RedTV53 ft. Ironik';
         case 'paranoia':
             PlayState.daPixelZoom = 3.5;
-            autor = 'Sandi ft. iKenny';
+            autor = 'Sandi ft. Kenny L';
         case 'overdue':
             autor = 'FriedFrick ft. Sandi';
         case 'nourishing-blood':
@@ -203,7 +205,7 @@ function onCreatePost(){
                 }
             }
     }
-    game.timeTxt.color = (sn == 'i-hate-you' ? 0xFFF4DA8F : sgCol);
+    game.timeTxt.color = (sn == 'i-hate-you' || sn == 'dark-forest' ? 0xFFF4DA8F : sgCol);
     game.scoreTxt.color = sgCol;
     game.timeBar.leftBar.color = sgCol;
 
@@ -267,6 +269,12 @@ function onUpdatePost(){
         su.angle = camHUD.angle;
         su.zoom = camHUD.zoom;
         su.filters = camHUD.filters;
+        su.width = camHUD.width;
+        su.height = camHUD.height;
+        if (sn != 'promotion'){
+            su.x = camHUD.x;
+            su.y = camHUD.y;
+        }
     }
 
     if (animReturnDad){
@@ -349,6 +357,9 @@ function onEvent(n,v1,v2){
                         add(line1);
                         add(line2);
 
+                        autorText.visible = true;
+                        titleText.visible = true;
+
                         titleText.y = 304.5;
                         autorText.y = titleText.y + 70;
                         line2.y 	= titleText.y + 57;
@@ -373,6 +384,8 @@ function onEvent(n,v1,v2){
                         FlxTween.tween(line2, {alpha: 0}, 0.5, {ease: FlxEase.cubeOut});
         
                         new FlxTimer().start(0.5, function(tmr:FlxTimer){
+                                autorText.visible = false;
+                                titleText.visible = false;    
                                 titleText.alpha = 0;
                                 autorText.alpha = 0;
                                 remove(line1);

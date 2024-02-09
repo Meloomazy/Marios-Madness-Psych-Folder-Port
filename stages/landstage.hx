@@ -100,9 +100,12 @@ function onCreatePost(){
 }
 
 var g = 0;
-function onUpdate(e){
+function onUpdatePost(e){
     g += e;
-    tvstatic.setFloat('iTime', g);
+    if (useShader) tvstatic.setFloat('iTime', g);
+
+    if (curStep < 447) iconP2.animation.curAnim.curFrame = 0;
+    else iconP2.animation.curAnim.curFrame = 1;
     return;
 }
 

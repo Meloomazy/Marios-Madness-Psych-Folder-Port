@@ -5977,6 +5977,24 @@
             },
             {
                 "lengthInSteps": 16,
+                "typeOfSection": 0,
+                "sectionNotes": [],
+                "altAnim": false,
+                "bpm": 165,
+                "changeBPM": false,
+                "mustHitSection": true
+            },
+            {
+                "sectionNotes": [],
+                "typeOfSection": 0,
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "mustHitSection": true,
+                "changeBPM": false,
+                "bpm": 165
+            },
+            {
+                "lengthInSteps": 16,
                 "altAnim": false,
                 "typeOfSection": 0,
                 "sectionNotes": [],

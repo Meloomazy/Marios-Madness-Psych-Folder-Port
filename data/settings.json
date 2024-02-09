@@ -13,6 +13,13 @@
 		"description": "Set to true if you're having a problem with the mechanics.\n[Affected Song: Powerdown, Unbeatable]",
 		"value": false
 	},
+	{
+		"save": "noModcharts",
+		"name": "Disable Modchart",
+		"type": "bool",
+		"description": "[Affected Song: Promotion]",
+		"value": false
+	},
     {
 		"save": "noVideoSprite",
 		"name": "Disable Video",

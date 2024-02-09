@@ -104,10 +104,6 @@ function onCreatePost(){
         var barCenter = healthBar.leftBar.x + FlxMath.lerp(0, healthBar.barWidth, healthBar.percent / 100) + healthBar.barOffset.x;
 		iconP1.x = barCenter - (150 * iconP1.scale.x) / 2 - 46;
 		iconP2.x = barCenter + (150 * iconP2.scale.x) / 2 - 116;
-
-        
-        //iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01) - iconOffset);
-		//iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (iconP2.width - iconOffset);
     }
     if (useShader){
         game.initLuaShader('test3');
@@ -134,8 +130,10 @@ function onCreatePost(){
 var g = 0;
 function onUpdate(e){
     g += e;
+    if (useShader){
     test3.setFloat('time', g);
     oldTv.setFloat('iTime', g);
+    }
     return;
 }
 

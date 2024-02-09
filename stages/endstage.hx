@@ -29,7 +29,9 @@ function onCreatePost(){
 var g = 0;
 function onUpdate(e){
     g += e;
+    if (useShader){
     test3.setFloat('time', g);
     oldTv.setFloat('iTime', g);
+    }
     return;
 }

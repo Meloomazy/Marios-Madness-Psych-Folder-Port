@@ -33,7 +33,7 @@ function onCreatePost()
     if songPath == 'powerdown' then
         setTextFont('subtitleText', 'mariones.ttf')
         setTextSize('subtitleText', 30)
-    elseif songPath == 'i-hate-you' then
+    elseif songPath == 'i-hate-you' or songPath == 'dark-forest' then
         if downscroll then setProperty('timeTxt.y', screenHeight - 75) end
         setProperty('timeBar.visible', false)
     end
@@ -57,7 +57,7 @@ end
 function onUpdatePost()
     setProperty('iconP1.offset.x', 0 * (getProperty('iconP1.scale.x') / 3))
     setProperty('iconP2.offset.x', 0 * (getProperty('iconP2.scale.x') / 3))
-    if songPath == 'i-hate-you' then
+    if songPath == 'i-hate-you' or songPath == 'dark-forest' then
         setTextString('timeTxt', 'TIME\n'..math.floor((songLength - getSongPosition()) / 1000))
     end
 end
@@ -67,8 +67,9 @@ function onEvent(n, v1, v2)
         setTextString('subtitleText', v1)
         if v2 == '' then
             setTextColor('subtitleText', 'ffffff')
-        elseif songPath == 'all-stars' then
-            setTextColor('subtitleText', '880808')
+        elseif v2:find('0xFF') then
+            v2 = v2:gsub('0xFF', '')
+            setTextColor('subtitleText', v2)
         else
             setTextColor('subtitleText', colorFromString(v2))
         end
@@ -124,8 +125,6 @@ function onBeatHit()
 
 	doTweenX('iconP1ScaleX','iconP1.scale',1,(0.5 * (1 / (curBpm / 60))),'cubeOut')
     doTweenX('iconP2ScaleX','iconP2.scale',1,(0.5 * (1 / (curBpm / 60))),'cubeOut')
-	doTweenX('iconP1ScaleY','iconP1.scale',1,(0.5 * (1 / (curBpm / 60))),'cubeOut')
-    doTweenX('iconP2ScaleY','iconP2.scale',1,(0.5 * (1 / (curBpm / 60))),'cubeOut')
 
     if totalBeat > 0 then
         if curBeat % timeBeat == 0 then

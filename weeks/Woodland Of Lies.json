@@ -2,7 +2,9 @@
 	"songs": [
 		["Alone", "beta2", [8, 94, 68]],
 		["I Hate You", "luigiH2", [66, 124, 31]],
-		["Last Course", "turmoil", [161, 65, 126]]
+		["Last Course", "turmoil", [161, 65, 126]],
+		["Dark Forest", "peach", [133,62,66]]
+
 	],
 
 	"weekCharacters": [

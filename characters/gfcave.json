@@ -8,8 +8,30 @@
 			"indices": [],
 			"fps": 12,
 			"anim": "idle",
-			"loop": false,
-			"name": "cavepixelgranddad idle"
+			"loop": true,
+			"name": "bop"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 12,
+			"anim": "hey0",
+			"loop": true,
+			"name": "up"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 12,
+			"anim": "hey1",
+			"loop": true,
+			"name": "break"
 		}
 	],
 	"no_antialiasing": true,
